@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="HeroData" load_steps=4 format=3 uid="uid://ddespmbjxy0ar"]
+
+[ext_resource type="SpriteFrames" uid="uid://bb233fofe8ml" path="res://heroes/knight/knight_f/knight_f_sprite_frames.tres" id="1_7xqb7"]
+[ext_resource type="Script" uid="uid://dufcb46b54xy3" path="res://heroes/hero_data.gd" id="1_adb4v"]
+[ext_resource type="PackedScene" uid="uid://d1shb4h886nmh" path="res://abilities/block/block_ability.tscn" id="1_psya5"]
+
+[resource]
+script = ExtResource("1_adb4v")
+health = 4.0
+max_health = 4.0
+damage = 0.9
+move_speed = 31.5
+ability_type = 2
+ability_scene = ExtResource("1_psya5")
+ability_cooldown = 6.5
+animations = ExtResource("1_7xqb7")
+hitbox_size = Vector2(15, 16)
+hitbox_pos = Vector2(0, 6.5)
+metadata/_custom_type_script = "uid://dufcb46b54xy3"

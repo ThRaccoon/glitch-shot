@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="HeroData" load_steps=4 format=3 uid="uid://bhy2eie3o55hd"]
+
+[ext_resource type="PackedScene" uid="uid://d1yav0xc07n7" path="res://abilities/fear/fear_ability.tscn" id="1_jgcrb"]
+[ext_resource type="SpriteFrames" uid="uid://6ab5txk785qd" path="res://heroes/lizard/lizard_f/lizard_f_sprite_frames.tres" id="1_jkklj"]
+[ext_resource type="Script" uid="uid://dufcb46b54xy3" path="res://heroes/hero_data.gd" id="1_obaic"]
+
+[resource]
+script = ExtResource("1_obaic")
+health = 2.5
+max_health = 2.5
+damage = 1.5
+move_speed = 34.5
+ability_type = 3
+ability_scene = ExtResource("1_jgcrb")
+ability_cooldown = 6.0
+animations = ExtResource("1_jkklj")
+hitbox_size = Vector2(16, 16)
+hitbox_pos = Vector2(0, 6)
+metadata/_custom_type_script = "uid://dufcb46b54xy3"

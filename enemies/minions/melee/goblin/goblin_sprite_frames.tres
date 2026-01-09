@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://ba2cpxurxwhpe"]
+
+[ext_resource type="Texture2D" uid="uid://dmd556nohs3v7" path="res://enemies/minions/melee/goblin/goblin_run_anim_f0.png" id="1_sjipg"]
+[ext_resource type="Texture2D" uid="uid://cdev6i0ciokxr" path="res://enemies/minions/melee/goblin/goblin_run_anim_f1.png" id="2_7qy8d"]
+[ext_resource type="Texture2D" uid="uid://bs2aqobijcnae" path="res://enemies/minions/melee/goblin/goblin_run_anim_f2.png" id="3_u0lox"]
+[ext_resource type="Texture2D" uid="uid://c4416hdgjyynv" path="res://enemies/minions/melee/goblin/goblin_run_anim_f3.png" id="4_0iwhe"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sjipg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7qy8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u0lox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0iwhe")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

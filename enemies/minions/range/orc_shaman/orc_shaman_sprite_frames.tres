@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://b34u62nir0jqp"]
+
+[ext_resource type="Texture2D" uid="uid://dftbilyhqtk68" path="res://enemies/minions/range/orc_shaman/orc_shaman_run_anim_f0.png" id="1_4ymcj"]
+[ext_resource type="Texture2D" uid="uid://755m2hcqj05m" path="res://enemies/minions/range/orc_shaman/orc_shaman_run_anim_f1.png" id="2_oit6a"]
+[ext_resource type="Texture2D" uid="uid://bhifb68l0edmt" path="res://enemies/minions/range/orc_shaman/orc_shaman_run_anim_f2.png" id="3_uua8o"]
+[ext_resource type="Texture2D" uid="uid://chufmwo4r3tbc" path="res://enemies/minions/range/orc_shaman/orc_shaman_run_anim_f3.png" id="4_wt7if"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4ymcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oit6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uua8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wt7if")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

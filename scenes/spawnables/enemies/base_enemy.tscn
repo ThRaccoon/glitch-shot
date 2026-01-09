@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbr7ihiu8km2k"]
+
+[ext_resource type="Script" uid="uid://b2g7bgyv71sb0" path="res://scenes/spawnables/enemies/base_enemy.gd" id="1_e45cc"]
+[ext_resource type="PackedScene" uid="uid://d1xr5gtwlc3da" path="res://components/core/health_component/health_component.tscn" id="2_np3a0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xauq"]
+
+[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("a_sprite", "collider", "pathfinder", "health_comp")]
+collision_layer = 4
+collision_mask = 11
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_e45cc")
+a_sprite = NodePath("ASprite")
+collider = NodePath("Collider")
+pathfinder = NodePath("Pathfinder")
+health_comp = NodePath("ComponentsContainer/HealthComponent")
+
+[node name="ASprite" type="AnimatedSprite2D" parent="."]
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8xauq")
+
+[node name="Pathfinder" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ComponentsContainer" type="Node" parent="."]
+
+[node name="HealthComponent" parent="ComponentsContainer" instance=ExtResource("2_np3a0")]
+
+[connection signal="health_changed_cmd" from="ComponentsContainer/HealthComponent" to="." method="_on_health_component_health_changed_cmd"]
+[connection signal="health_depleted_cmd" from="ComponentsContainer/HealthComponent" to="." method="_on_health_component_health_depleted_cmd"]

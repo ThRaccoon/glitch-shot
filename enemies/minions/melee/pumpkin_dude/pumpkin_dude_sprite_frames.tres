@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c2cu7haidlwcp"]
+
+[ext_resource type="Texture2D" uid="uid://bwyk76qxb0823" path="res://enemies/minions/melee/pumpkin_dude/pumpkin_dude_run_anim_f0.png" id="1_uuoc3"]
+[ext_resource type="Texture2D" uid="uid://c3p18p5qau1ur" path="res://enemies/minions/melee/pumpkin_dude/pumpkin_dude_run_anim_f1.png" id="2_bx1wh"]
+[ext_resource type="Texture2D" uid="uid://c6oky87oh1htl" path="res://enemies/minions/melee/pumpkin_dude/pumpkin_dude_run_anim_f2.png" id="3_t80cd"]
+[ext_resource type="Texture2D" uid="uid://bbyirhsn6w6b7" path="res://enemies/minions/melee/pumpkin_dude/pumpkin_dude_run_anim_f3.png" id="4_fyfm2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uuoc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bx1wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t80cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fyfm2")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

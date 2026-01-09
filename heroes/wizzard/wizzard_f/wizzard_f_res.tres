@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="HeroData" load_steps=4 format=3 uid="uid://1fgynlimov6j"]
+
+[ext_resource type="PackedScene" uid="uid://btanswi4xyxfc" path="res://abilities/blink/blink_ability.tscn" id="1_1ryqy"]
+[ext_resource type="Script" uid="uid://dufcb46b54xy3" path="res://heroes/hero_data.gd" id="1_chcq8"]
+[ext_resource type="SpriteFrames" uid="uid://dfynks03gobrp" path="res://heroes/wizzard/wizzard_f/wizzard_f_sprite_frames.tres" id="1_pla2x"]
+
+[resource]
+script = ExtResource("1_chcq8")
+health = 2.5
+max_health = 2.5
+damage = 1.5
+move_speed = 34.5
+ability_type = 4
+ability_scene = ExtResource("1_1ryqy")
+ability_cooldown = 5.0
+animations = ExtResource("1_pla2x")
+hitbox_size = Vector2(16, 16)
+hitbox_pos = Vector2(0, 6)
+metadata/_custom_type_script = "uid://dufcb46b54xy3"

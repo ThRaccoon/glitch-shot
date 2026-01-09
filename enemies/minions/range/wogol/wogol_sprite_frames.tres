@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cx01o4kx2ol41"]
+
+[ext_resource type="Texture2D" uid="uid://bucwk58m7b583" path="res://enemies/minions/range/wogol/wogol_run_anim_f0.png" id="1_0bqgq"]
+[ext_resource type="Texture2D" uid="uid://do0upa8pjkvxi" path="res://enemies/minions/range/wogol/wogol_run_anim_f1.png" id="2_7kq27"]
+[ext_resource type="Texture2D" uid="uid://b1nu771toq0gk" path="res://enemies/minions/range/wogol/wogol_run_anim_f2.png" id="3_rsofk"]
+[ext_resource type="Texture2D" uid="uid://cuavr2t020gn6" path="res://enemies/minions/range/wogol/wogol_run_anim_f3.png" id="4_annpb"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0bqgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7kq27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rsofk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_annpb")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

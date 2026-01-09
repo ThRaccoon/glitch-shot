@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cql5ysvp1rysf"]
+
+[ext_resource type="PackedScene" uid="uid://bbr7ihiu8km2k" path="res://scenes/spawnables/enemies/base_enemy.tscn" id="1_yfnqb"]
+[ext_resource type="Script" uid="uid://bnhaurgp7cj0h" path="res://scenes/spawnables/enemies/minions/melee_enemy/melee_enemy.gd" id="2_vquw6"]
+
+[node name="MeleeEnemy" instance=ExtResource("1_yfnqb")]
+script = ExtResource("2_vquw6")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=2 format=3 uid="uid://botuw5lw3npd0"]
+
+[ext_resource type="Script" uid="uid://yocixeig6juq" path="res://enemies/minions/range/range_enemy_data.gd" id="1_6sigp"]
+
+[resource]
+script = ExtResource("1_6sigp")
+metadata/_custom_type_script = "uid://yocixeig6juq"

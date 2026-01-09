@@ -1,0 +1,47 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dfynks03gobrp"]
+
+[ext_resource type="Texture2D" uid="uid://biyd4tjf48gmi" path="res://heroes/wizzard/wizzard_f/idle/wizzard_f_idle_anim_f0.png" id="1_qs452"]
+[ext_resource type="Texture2D" uid="uid://dtnrxxxygb0yt" path="res://heroes/wizzard/wizzard_f/idle/wizzard_f_idle_anim_f1.png" id="2_1ch2a"]
+[ext_resource type="Texture2D" uid="uid://0oyicgwsyu7y" path="res://heroes/wizzard/wizzard_f/idle/wizzard_f_idle_anim_f2.png" id="3_b2egj"]
+[ext_resource type="Texture2D" uid="uid://wreg33038jv0" path="res://heroes/wizzard/wizzard_f/idle/wizzard_f_idle_anim_f3.png" id="4_tq2jr"]
+[ext_resource type="Texture2D" uid="uid://bsntd3nr350ej" path="res://heroes/wizzard/wizzard_f/run/wizzard_f_run_anim_f0.png" id="5_faw1h"]
+[ext_resource type="Texture2D" uid="uid://ca0m1t81fu7hn" path="res://heroes/wizzard/wizzard_f/run/wizzard_f_run_anim_f1.png" id="6_q37rt"]
+[ext_resource type="Texture2D" uid="uid://i10uexgps11y" path="res://heroes/wizzard/wizzard_f/run/wizzard_f_run_anim_f2.png" id="7_0gj67"]
+[ext_resource type="Texture2D" uid="uid://i0vls8bqdrce" path="res://heroes/wizzard/wizzard_f/run/wizzard_f_run_anim_f3.png" id="8_74nr3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qs452")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1ch2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b2egj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tq2jr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_faw1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q37rt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0gj67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_74nr3")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

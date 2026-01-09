@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://lbpa2pm42jmi"]
+
+[ext_resource type="Texture2D" uid="uid://dakotmwwxuisk" path="res://enemies/minions/melee/chort/chort_run_anim_f0.png" id="1_eo042"]
+[ext_resource type="Texture2D" uid="uid://8o8njmkv24n6" path="res://enemies/minions/melee/chort/chort_run_anim_f1.png" id="2_s2wyj"]
+[ext_resource type="Texture2D" uid="uid://dr1g6fp3mjuoa" path="res://enemies/minions/melee/chort/chort_run_anim_f2.png" id="3_ts2xe"]
+[ext_resource type="Texture2D" uid="uid://sp4s7gnaxqtc" path="res://enemies/minions/melee/chort/chort_run_anim_f3.png" id="4_h3so3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eo042")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s2wyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ts2xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h3so3")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

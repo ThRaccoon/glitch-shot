@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dqr8wnhxprcsi"]
+
+[ext_resource type="Texture2D" uid="uid://fcmc4xnx6q0l" path="res://enemies/minions/melee/masked_orc/masked_orc_run_anim_f0.png" id="1_g2yun"]
+[ext_resource type="Texture2D" uid="uid://d4hde7x6bqejf" path="res://enemies/minions/melee/masked_orc/masked_orc_run_anim_f1.png" id="2_tfedj"]
+[ext_resource type="Texture2D" uid="uid://c34n72fuu3bj3" path="res://enemies/minions/melee/masked_orc/masked_orc_run_anim_f2.png" id="3_ltbhx"]
+[ext_resource type="Texture2D" uid="uid://bnxdcwmhyehuw" path="res://enemies/minions/melee/masked_orc/masked_orc_run_anim_f3.png" id="4_ece6q"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g2yun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tfedj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ltbhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ece6q")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

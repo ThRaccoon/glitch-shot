@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=2 format=3 uid="uid://blludqdvweuom"]
+
+[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/minions/melee/melee_enemy_data.gd" id="1_brelg"]
+
+[resource]
+script = ExtResource("1_brelg")
+metadata/_custom_type_script = "uid://cwg2q2tahtcc0"

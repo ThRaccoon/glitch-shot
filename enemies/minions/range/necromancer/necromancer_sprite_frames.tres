@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://h63e1cnlf2mf"]
+
+[ext_resource type="Texture2D" uid="uid://c2yjy1m83ll5i" path="res://enemies/minions/range/necromancer/necromancer_anim_f0.png" id="1_j8g52"]
+[ext_resource type="Texture2D" uid="uid://k5dpg3w5p2ns" path="res://enemies/minions/range/necromancer/necromancer_anim_f1.png" id="2_mfw1h"]
+[ext_resource type="Texture2D" uid="uid://b7uvn1yir8pm0" path="res://enemies/minions/range/necromancer/necromancer_anim_f2.png" id="3_c8kt6"]
+[ext_resource type="Texture2D" uid="uid://bs6dru5mi3id8" path="res://enemies/minions/range/necromancer/necromancer_anim_f3.png" id="4_250si"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j8g52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mfw1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c8kt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_250si")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

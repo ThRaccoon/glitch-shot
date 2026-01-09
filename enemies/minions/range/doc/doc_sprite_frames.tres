@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dokwcwyard1xq"]
+
+[ext_resource type="Texture2D" uid="uid://hnnsifycpl35" path="res://enemies/minions/range/doc/doc_run_anim_f0.png" id="1_n7neg"]
+[ext_resource type="Texture2D" uid="uid://du86c1mpckijb" path="res://enemies/minions/range/doc/doc_run_anim_f1.png" id="2_4x0hu"]
+[ext_resource type="Texture2D" uid="uid://coq06k1jkkwlv" path="res://enemies/minions/range/doc/doc_run_anim_f2.png" id="3_3pc0b"]
+[ext_resource type="Texture2D" uid="uid://dt4mxvb2qrebi" path="res://enemies/minions/range/doc/doc_run_anim_f3.png" id="4_m3g84"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n7neg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4x0hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3pc0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m3g84")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

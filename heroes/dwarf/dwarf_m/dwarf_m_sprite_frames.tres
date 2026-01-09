@@ -1,0 +1,47 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dm01f2bnovox1"]
+
+[ext_resource type="Texture2D" uid="uid://drvteghcpginl" path="res://heroes/dwarf/dwarf_m/idle/dwarf_m_idle_anim_f0.png" id="1_g1pp2"]
+[ext_resource type="Texture2D" uid="uid://d2ork5ye05e7f" path="res://heroes/dwarf/dwarf_m/idle/dwarf_m_idle_anim_f1.png" id="2_ak08w"]
+[ext_resource type="Texture2D" uid="uid://dwg4h4vxqjbkt" path="res://heroes/dwarf/dwarf_m/idle/dwarf_m_idle_anim_f2.png" id="3_ts31a"]
+[ext_resource type="Texture2D" uid="uid://ctmq77jwqhcla" path="res://heroes/dwarf/dwarf_m/idle/dwarf_m_idle_anim_f3.png" id="4_bdhn6"]
+[ext_resource type="Texture2D" uid="uid://djuhwowbi7tqx" path="res://heroes/dwarf/dwarf_m/run/dwarf_m_run_anim_f0.png" id="5_ctudb"]
+[ext_resource type="Texture2D" uid="uid://bs1na2pscl2hl" path="res://heroes/dwarf/dwarf_m/run/dwarf_m_run_anim_f1.png" id="6_ckv8v"]
+[ext_resource type="Texture2D" uid="uid://cufva5qm0pwpp" path="res://heroes/dwarf/dwarf_m/run/dwarf_m_run_anim_f2.png" id="7_gy3ej"]
+[ext_resource type="Texture2D" uid="uid://chbv0q7out363" path="res://heroes/dwarf/dwarf_m/run/dwarf_m_run_anim_f3.png" id="8_ekmxr"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g1pp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ak08w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ts31a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bdhn6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ctudb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ckv8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gy3ej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ekmxr")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
