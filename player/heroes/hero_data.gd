@@ -19,6 +19,6 @@ class_name HeroData extends Resource
 @export var death_sound: AudioStream
 @export var ability_sound: AudioStream
 
-@export_group("Hitbox")
-@export var hitbox_size: Vector2
-@export var hitbox_pos: Vector2
+@export_group("Collider")
+@export var collider_size: Vector2
+@export var collider_pos: Vector2

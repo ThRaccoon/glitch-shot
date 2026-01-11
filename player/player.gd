@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
-@export var a_sprite: AnimatedSprite2D
-@export var collider: CollisionShape2D
+@export var hero_a_sprite: AnimatedSprite2D
+@export var hero_collider: CollisionShape2D
 @export var health_comp: HealthComponent
 
 var hero_data: HeroData
@@ -28,12 +28,12 @@ func _process(_delta: float) -> void:
 	var dir_to_mouse: Vector2 = global_position.direction_to(get_global_mouse_position())
 	var is_facing_right: bool = Vector2.RIGHT.dot(dir_to_mouse) >= 0
 	
-	a_sprite.flip_h = not is_facing_right
+	hero_a_sprite.flip_h = not is_facing_right
 	 
 	if velocity.length() > 0:
-		a_sprite.play("run")
+		hero_a_sprite.play("run")
 	else:
-		a_sprite.play("idle")
+		hero_a_sprite.play("idle")
 	
 func _physics_process(_delta: float) -> void:
 	if not is_setuped:
@@ -84,14 +84,14 @@ func _setup_visuals() -> void:
 		push_error("animations are null")
 		return
 	
-	a_sprite.sprite_frames = hero_data.animations
+	hero_a_sprite.sprite_frames = hero_data.animations
 
 func _setup_sounds() -> void:
 	pass
 	
 func _setup_hitbox() -> void:
-	collider.shape.size = hero_data.hitbox_size
-	collider.position = hero_data.hitbox_pos
+	hero_collider.shape.size = hero_data.collider_size
+	hero_collider.position = hero_data.collider_pos
 
 func _setup_components() -> void:
 	if not health_comp:

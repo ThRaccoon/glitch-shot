@@ -3,13 +3,11 @@
 [ext_resource type="Script" uid="uid://i7hil7ncbjo8" path="res://player/guns/gun.gd" id="1_idnmr"]
 [ext_resource type="Texture2D" uid="uid://b3jua76v5nmev" path="res://player/guns/smgs/thompson/thompson.png" id="2_dgxdn"]
 
-[node name="Gun" type="Node2D" node_paths=PackedStringArray("a_sprite")]
+[node name="Gun" type="Node2D" node_paths=PackedStringArray("gun_sprite")]
 script = ExtResource("1_idnmr")
-a_sprite = NodePath("Sprite")
+gun_sprite = NodePath("GunSprite")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="GunSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_dgxdn")
 offset = Vector2(6.5, 0)
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
