@@ -1,19 +1,16 @@
-class_name UIManager extends CanvasLayer
+class_name UIManager extends Node
 
 enum MenuType { MAIN_MENU, HERO_SELECTION }
 
-var menu_registry: Dictionary[MenuType, String] = {
+@export var menus_cntr: Control
+@export var huds_cntr: Control
+
+var _menu_registry: Dictionary[MenuType, String] = {
 	MenuType.MAIN_MENU : "uid://de0x2l5dpsnw4",
 	MenuType.HERO_SELECTION : "uid://dkm852tqgdfpn"
 }
 
-var active_menus: Dictionary[MenuType, Control] = {}
-
-# Menus
-@onready var menus_container: Control = $MenusContainer
-
-# Huds
-@onready var huds_container: Control = $HudsContainer
+var _active_menus: Dictionary[MenuType, Control] = {}
 
 func _ready() -> void:
 	SignalBus.open_menu_sig.connect(open_menu)
@@ -25,40 +22,40 @@ func _ready() -> void:
 	open_menu(MenuType.MAIN_MENU)
 
 func open_menu(key: MenuType) -> void:
-	if not menu_registry.has(key):
+	if not _menu_registry.has(key):
 		push_warning("Menu key not found in registry: ", key)
 		return
 	
-	if active_menus.has(key):
+	if _active_menus.has(key):
 		return
 	
-	var menu_rsrc: PackedScene = load(menu_registry[key]) 
+	var menu_rsrc: PackedScene = load(_menu_registry[key]) 
 	var new_menu: Control = menu_rsrc.instantiate()
 	add_child(new_menu)
-	active_menus[key] = new_menu
+	_active_menus[key] = new_menu
 		
 func show_menu(key: MenuType) -> void:
-	if not active_menus.has(key):
+	if not _active_menus.has(key):
 		push_warning("Menu key not found in active menus: ", key)
 		return
 	
-	active_menus[key].visible = true
+	_active_menus[key].visible = true
 	
 func hide_menu(key: MenuType) -> void:
-	if not active_menus.has(key):
+	if not _active_menus.has(key):
 		push_warning("Menu key not found in active menus: ", key)
 		return
 	
-	active_menus[key].visible = false
+	_active_menus[key].visible = false
 	
 func close_menu(key: MenuType) -> void:
-	if not active_menus.has(key):
+	if not _active_menus.has(key):
 		push_warning("Menu key not found in active menus: ", key)
 		return
 	
-	active_menus[key].queue_free()
-	active_menus.erase(key)
+	_active_menus[key].queue_free()
+	_active_menus.erase(key)
 
 func close_all_menus() -> void:
-	for key in active_menus:
-		close_menu(key)
+	for menu in _active_menus:
+		close_menu(menu)

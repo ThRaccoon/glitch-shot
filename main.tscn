@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://blqfavnhu6ajn"]
+
+[ext_resource type="Script" uid="uid://d0khsskalwf83" path="res://managers/game_manager.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://go0mhkypot0g" path="res://managers/world_manager.gd" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://cyf3akq3rc5dg" path="res://managers/ui_manager.gd" id="3_tbgi4"]
+[ext_resource type="Script" uid="uid://c2nijn1j6q7di" path="res://managers/level_manager.gd" id="3_tefeu"]
+[ext_resource type="Script" uid="uid://sy046viy6i4c" path="res://spawners/enemy_spawner.gd" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://dg4boiq6505a6" path="res://spawners/player_spawner.gd" id="5_85g3d"]
+[ext_resource type="Script" uid="uid://bh3jfiomyv1je" path="res://spawners/destructible_spawner.gd" id="7_choun"]
+[ext_resource type="Script" uid="uid://dr3h05jg31qii" path="res://spawners/loot_spawner.gd" id="8_ya4ey"]
+
+[node name="Main" type="Node"]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("_world_mngr", "_ui_mngr")]
+script = ExtResource("1_sugp2")
+_world_mngr = NodePath("../WorldManager")
+_ui_mngr = NodePath("../UIManager")
+
+[node name="WorldManager" type="Node" parent="." node_paths=PackedStringArray("_lvl_mngr", "_player_spawner", "_enemy_spawner", "_destructible_spawner", "_loot_spawner")]
+script = ExtResource("2_jyhfs")
+_lvl_mngr = NodePath("LevelManager")
+_player_spawner = NodePath("SpawnersContainer/PlayerSpawner")
+_enemy_spawner = NodePath("SpawnersContainer/EnemySpawner")
+_destructible_spawner = NodePath("SpawnersContainer/DestructibleSpawner")
+_loot_spawner = NodePath("SpawnersContainer/LootSpawner")
+
+[node name="LevelManager" type="Node" parent="WorldManager"]
+script = ExtResource("3_tefeu")
+
+[node name="SpawnersContainer" type="Node" parent="WorldManager"]
+
+[node name="PlayerSpawner" type="Node" parent="WorldManager/SpawnersContainer"]
+script = ExtResource("5_85g3d")
+
+[node name="EnemySpawner" type="Node" parent="WorldManager/SpawnersContainer"]
+script = ExtResource("4_tbgi4")
+
+[node name="DestructibleSpawner" type="Node" parent="WorldManager/SpawnersContainer"]
+script = ExtResource("7_choun")
+
+[node name="LootSpawner" type="Node" parent="WorldManager/SpawnersContainer"]
+script = ExtResource("8_ya4ey")
+
+[node name="UIManager" type="Node" parent="." node_paths=PackedStringArray("menus_cntr", "huds_cntr")]
+script = ExtResource("3_tbgi4")
+menus_cntr = NodePath("MenusContainer")
+huds_cntr = NodePath("HudsContainer")
+
+[node name="MenusContainer" type="Control" parent="UIManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HudsContainer" type="Control" parent="UIManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

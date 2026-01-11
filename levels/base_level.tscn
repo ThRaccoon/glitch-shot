@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://daslnw8wk7up7"]
+
+[node name="BaseLevel" type="Node2D"]
+
+[node name="SpawnPointsContainer" type="Node" parent="."]
+
+[node name="PlayerSpawnPoints" type="Node" parent="SpawnPointsContainer"]
+
+[node name="MinionSpawnPoints" type="Node" parent="SpawnPointsContainer"]
+
+[node name="EliteSpawnPoints" type="Node" parent="SpawnPointsContainer"]
+
+[node name="DestructibleSpawnPoints" type="Node" parent="SpawnPointsContainer"]
+
+[node name="TreasureSpawnPoints" type="Node" parent="SpawnPointsContainer"]

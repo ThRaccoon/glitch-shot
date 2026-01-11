@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=2 format=3 uid="uid://botuw5lw3npd0"]
+[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=3 format=3 uid="uid://botuw5lw3npd0"]
 
 [ext_resource type="Script" uid="uid://yocixeig6juq" path="res://enemies/minions/range/range_enemy_data.gd" id="1_6sigp"]
+[ext_resource type="SpriteFrames" uid="uid://h63e1cnlf2mf" path="res://enemies/minions/range/necromancer/necromancer_anims.tres" id="1_iqbje"]
 
 [resource]
 script = ExtResource("1_6sigp")
+animations = ExtResource("1_iqbje")
 metadata/_custom_type_script = "uid://yocixeig6juq"

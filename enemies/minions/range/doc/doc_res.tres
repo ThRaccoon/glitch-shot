@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=2 format=3 uid="uid://b0vhaso0xcjb2"]
+[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=3 format=3 uid="uid://b0vhaso0xcjb2"]
 
+[ext_resource type="SpriteFrames" uid="uid://dokwcwyard1xq" path="res://enemies/minions/range/doc/doc_anims.tres" id="1_8xuvj"]
 [ext_resource type="Script" uid="uid://yocixeig6juq" path="res://enemies/minions/range/range_enemy_data.gd" id="1_n02gs"]
 
 [resource]
 script = ExtResource("1_n02gs")
+animations = ExtResource("1_8xuvj")
 metadata/_custom_type_script = "uid://yocixeig6juq"

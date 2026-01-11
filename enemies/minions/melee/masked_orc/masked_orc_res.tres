@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=3 format=3 uid="uid://cninythw5j0tr"]
+
+[ext_resource type="SpriteFrames" uid="uid://dqr8wnhxprcsi" path="res://enemies/minions/melee/masked_orc/masked_orc_anims.tres" id="1_6m74q"]
+[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/minions/melee/melee_enemy_data.gd" id="1_8sdhw"]
+
+[resource]
+script = ExtResource("1_8sdhw")
+animations = ExtResource("1_6m74q")
+metadata/_custom_type_script = "uid://cwg2q2tahtcc0"

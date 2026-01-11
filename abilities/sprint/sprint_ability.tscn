@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd1vvo3cv5s1e"]
-
-[ext_resource type="Script" uid="uid://douhu18npy5xp" path="res://abilities/sprint/sprint_ability.gd" id="1_rq46l"]
-
-[node name="SprintAbility" type="Node2D"]
-script = ExtResource("1_rq46l")
-bonus_move_speed = 20.0
-sprint_duration = 3.0

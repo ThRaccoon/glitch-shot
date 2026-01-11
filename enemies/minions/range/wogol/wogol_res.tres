@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=2 format=3 uid="uid://bc1s7irfi0l25"]
+[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=3 format=3 uid="uid://bc1s7irfi0l25"]
 
+[ext_resource type="SpriteFrames" uid="uid://cx01o4kx2ol41" path="res://enemies/minions/range/wogol/wogol_anims.tres" id="1_c1vsl"]
 [ext_resource type="Script" uid="uid://yocixeig6juq" path="res://enemies/minions/range/range_enemy_data.gd" id="1_hn83n"]
 
 [resource]
 script = ExtResource("1_hn83n")
+animations = ExtResource("1_c1vsl")
 metadata/_custom_type_script = "uid://yocixeig6juq"

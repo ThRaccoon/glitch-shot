@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=2 format=3 uid="uid://bi5x1sb8paks6"]
+[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=3 format=3 uid="uid://bi5x1sb8paks6"]
 
+[ext_resource type="SpriteFrames" uid="uid://lbpa2pm42jmi" path="res://enemies/minions/melee/chort/chort_anims.tres" id="1_r2r3o"]
 [ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/minions/melee/melee_enemy_data.gd" id="1_wjtg4"]
 
 [resource]
 script = ExtResource("1_wjtg4")
+animations = ExtResource("1_r2r3o")
 metadata/_custom_type_script = "uid://cwg2q2tahtcc0"

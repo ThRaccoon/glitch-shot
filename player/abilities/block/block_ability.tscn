@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1shb4h886nmh"]
+
+[ext_resource type="Script" uid="uid://cnyhh0maar2yc" path="res://player/abilities/block/block_ability.gd" id="1_6dutm"]
+
+[node name="BlockAbility" type="Node2D"]
+script = ExtResource("1_6dutm")
+block_duration = 2.0

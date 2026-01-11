@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=2 format=3 uid="uid://cpergo8uwh33i"]
+[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=3 format=3 uid="uid://cpergo8uwh33i"]
 
+[ext_resource type="SpriteFrames" uid="uid://bggvqcmvdrqqo" path="res://enemies/minions/melee/ice_zombie/ice_zombie_anims.tres" id="1_glr4u"]
 [ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/minions/melee/melee_enemy_data.gd" id="1_lq7et"]
 
 [resource]
 script = ExtResource("1_lq7et")
+animations = ExtResource("1_glr4u")
 metadata/_custom_type_script = "uid://cwg2q2tahtcc0"

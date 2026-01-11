@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1kgo3pk2u80g"]
-
-[ext_resource type="Script" uid="uid://ed2wy35jvfbf" path="res://components/effects/fear_effect/fear_effect.gd" id="1_7wtk8"]
-
-[node name="FearEffect" type="Node"]
-script = ExtResource("1_7wtk8")

@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=2 format=3 uid="uid://dm885i6t3yhbb"]
+[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=3 format=3 uid="uid://dm885i6t3yhbb"]
 
+[ext_resource type="SpriteFrames" uid="uid://b34u62nir0jqp" path="res://enemies/minions/range/orc_shaman/orc_shaman_anims.tres" id="1_d76qk"]
 [ext_resource type="Script" uid="uid://yocixeig6juq" path="res://enemies/minions/range/range_enemy_data.gd" id="1_g4n5a"]
 
 [resource]
 script = ExtResource("1_g4n5a")
+animations = ExtResource("1_d76qk")
 metadata/_custom_type_script = "uid://yocixeig6juq"

@@ -1,15 +1,21 @@
 class_name PlayerSpawner extends Node
 
-var player_scene_uid: String = "uid://c1gyjs0ddhhqy"
-var player: Player
+const _PLAYER_SCENE_UID: String = "uid://c1gyjs0ddhhqy"
 
-func spawn_player(data: HeroData):
-	var player_scene: PackedScene = load(player_scene_uid)
+var _player: Player
+
+func spawn_player(data: HeroData, spn_pts: Array = []) -> void:
+	var player_scene: PackedScene = load(_PLAYER_SCENE_UID)
 	
-	if player_scene:
-		player = player_scene.instantiate()
-		player.set_hero_data(data)
+	if not player_scene:
+		push_error("Faild to load player scene with uid: ", _PLAYER_SCENE_UID)
+		return
 		
-		self.add_child(player)
-	else:
-		push_error("Failed to load player scene with uid: ", player_scene_uid)
+	_player = player_scene.instantiate()
+	_player.set_hero_data(data)
+	
+	if not spn_pts.is_empty():
+		var random_pos = spn_pts.pick_random()
+		_player.global_position = random_pos
+ 
+	self.add_child(_player)

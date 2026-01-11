@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1gyjs0ddhhqy"]
+
+[ext_resource type="Script" uid="uid://d3wchds18csy" path="res://player/player.gd" id="1_g2els"]
+[ext_resource type="SpriteFrames" uid="uid://baqnhsrjmqc4u" path="res://player/heroes/dwarf/dwarf_f/dwarf_f_anims.tres" id="2_1ay40"]
+[ext_resource type="PackedScene" uid="uid://d1xr5gtwlc3da" path="res://components/health_component/health_component.tscn" id="2_72s8p"]
+[ext_resource type="PackedScene" uid="uid://d3f8sb4lvkf30" path="res://player/guns/gun.tscn" id="2_mj2xy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72s8p"]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("a_sprite", "collider", "health_comp")]
+collision_layer = 2
+collision_mask = 29
+script = ExtResource("1_g2els")
+a_sprite = NodePath("ASprite")
+collider = NodePath("Collider")
+health_comp = NodePath("ComponentsContainer/HealthComponent")
+
+[node name="ASprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_1ay40")
+animation = &"idle"
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_72s8p")
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="WeaponHolder" type="Node2D" parent="."]
+position = Vector2(0.61, 9.025)
+
+[node name="Weapon" parent="WeaponHolder" instance=ExtResource("2_mj2xy")]
+
+[node name="ComponentsContainer" type="Node" parent="."]
+
+[node name="HealthComponent" parent="ComponentsContainer" instance=ExtResource("2_72s8p")]
+
+[connection signal="health_changed_sig" from="ComponentsContainer/HealthComponent" to="." method="_on_health_component_health_changed_sig"]
+[connection signal="health_depleted_sig" from="ComponentsContainer/HealthComponent" to="." method="_on_health_component_health_depleted_sig"]

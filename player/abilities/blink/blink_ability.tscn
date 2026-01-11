@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://btanswi4xyxfc"]
+
+[ext_resource type="Script" uid="uid://bjwsb2pveg7o1" path="res://player/abilities/blink/blink_ability.gd" id="1_mgxoh"]
+
+[node name="BlinkAbility" type="Node2D" node_paths=PackedStringArray("blink_ray")]
+script = ExtResource("1_mgxoh")
+blink_ray = NodePath("BlinkRay")
+blink_distance = 75.0
+
+[node name="BlinkRay" type="RayCast2D" parent="."]
+collision_mask = 9

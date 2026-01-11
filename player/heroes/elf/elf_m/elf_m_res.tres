@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="HeroData" load_steps=4 format=3 uid="uid://dxs0t41ujsy8f"]
+
+[ext_resource type="PackedScene" uid="uid://cd1vvo3cv5s1e" path="res://player/abilities/sprint/sprint_ability.tscn" id="1_j2d7r"]
+[ext_resource type="SpriteFrames" uid="uid://b0c5bq4fpgv1q" path="res://player/heroes/elf/elf_m/elf_m_anims.tres" id="1_r7lqw"]
+[ext_resource type="Script" uid="uid://dufcb46b54xy3" path="res://player/heroes/hero_data.gd" id="1_yovmq"]
+
+[resource]
+script = ExtResource("1_yovmq")
+health = 3.0
+max_health = 3.0
+damage = 1.5
+move_speed = 33.0
+ability_type = 1
+ability_scene = ExtResource("1_j2d7r")
+ability_cooldown = 6.0
+animations = ExtResource("1_r7lqw")
+hitbox_size = Vector2(16, 19)
+hitbox_pos = Vector2(0, 5)
+metadata/_custom_type_script = "uid://dufcb46b54xy3"

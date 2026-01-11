@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=2 format=3 uid="uid://c1dvd1mpyyo8g"]
+[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=3 format=3 uid="uid://c1dvd1mpyyo8g"]
 
+[ext_resource type="SpriteFrames" uid="uid://behdxql6x0o6d" path="res://enemies/minions/melee/orc_warrior/orc_warrior_anims.tres" id="1_alv0p"]
 [ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/minions/melee/melee_enemy_data.gd" id="1_ddvx3"]
 
 [resource]
 script = ExtResource("1_ddvx3")
+animations = ExtResource("1_alv0p")
 metadata/_custom_type_script = "uid://cwg2q2tahtcc0"
