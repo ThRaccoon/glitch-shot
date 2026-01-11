@@ -3,7 +3,6 @@ class_name HeroData extends Resource
 @export_group("Stats")
 @export var health: float
 @export var max_health: float
-@export var damage: float
 @export var move_speed: float
 
 @export_group("Ability")

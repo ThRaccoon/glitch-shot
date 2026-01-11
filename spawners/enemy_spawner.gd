@@ -3,12 +3,12 @@ class_name EnemySpawner extends Node
 enum EnemyMinionType { MELEE, RANGE }
 enum EnemyEliteId { BIG_DEMON, BIG_ZOMBIE, OGRE }
 
-var _minion_scenes: Dictionary[EnemyMinionType, String] = {
+var minion_scenes: Dictionary[EnemyMinionType, String] = {
 	EnemyMinionType.MELEE : "uid://cql5ysvp1rysf",
 	EnemyMinionType.RANGE : "uid://bbqtbdm05nh71"
 }
 
-var _minion_resources: Dictionary[EnemyMinionType, Array] = {
+var minion_resources: Dictionary[EnemyMinionType, Array] = {
 	EnemyMinionType.MELEE : [
 		"uid://bi5x1sb8paks6",   # chort
 		"uid://bgk8p87tnc8l1",   # goblin
@@ -31,19 +31,14 @@ var _minion_resources: Dictionary[EnemyMinionType, Array] = {
 	]
 }
 
-var _elite_scenes: Dictionary[EnemyEliteId, String] = {
+var elite_scenes: Dictionary[EnemyEliteId, String] = {
 	EnemyEliteId.BIG_DEMON : "",
 	EnemyEliteId.BIG_ZOMBIE : "",
 	EnemyEliteId.OGRE : ""
 }
 
-var _elite_resources: Dictionary[EnemyEliteId, String] = {
+var elite_resources: Dictionary[EnemyEliteId, String] = {
 	EnemyEliteId.BIG_DEMON : "",
 	EnemyEliteId.BIG_ZOMBIE : "",
 	EnemyEliteId.OGRE : ""
 }
-
-# round-robin
-func _spawn_wave(melee_count: int, range_count, spawns: Array[Marker2D]):
-	pass
-		

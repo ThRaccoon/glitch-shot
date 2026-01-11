@@ -7,10 +7,9 @@ class_name Player extends CharacterBody2D
 var hero_data: HeroData
 var crnt_ability: BaseAbility
 
-var is_setuped: bool
-var damage: float
 var move_speed: float
 
+var is_setuped: bool
 var input_dir: Vector2 
 
 func _ready() -> void:
@@ -66,7 +65,6 @@ func _setup() -> void:
 	is_setuped = true
 	
 func _setup_stats() -> void:
-	damage = hero_data.damage
 	move_speed = hero_data.move_speed
 	
 func _setup_ability() -> void:

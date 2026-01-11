@@ -11,18 +11,18 @@
 
 [node name="Main" type="Node"]
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("_world_mngr", "_ui_mngr")]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("world_mngr", "ui_mngr")]
 script = ExtResource("1_sugp2")
-_world_mngr = NodePath("../WorldManager")
-_ui_mngr = NodePath("../UIManager")
+world_mngr = NodePath("../WorldManager")
+ui_mngr = NodePath("../UIManager")
 
-[node name="WorldManager" type="Node" parent="." node_paths=PackedStringArray("_lvl_mngr", "_player_spawner", "_enemy_spawner", "_destructible_spawner", "_loot_spawner")]
+[node name="WorldManager" type="Node" parent="." node_paths=PackedStringArray("lvl_mngr", "player_spawner", "enemy_spawner", "destructible_spawner", "loot_spawner")]
 script = ExtResource("2_jyhfs")
-_lvl_mngr = NodePath("LevelManager")
-_player_spawner = NodePath("SpawnersContainer/PlayerSpawner")
-_enemy_spawner = NodePath("SpawnersContainer/EnemySpawner")
-_destructible_spawner = NodePath("SpawnersContainer/DestructibleSpawner")
-_loot_spawner = NodePath("SpawnersContainer/LootSpawner")
+lvl_mngr = NodePath("LevelManager")
+player_spawner = NodePath("SpawnersContainer/PlayerSpawner")
+enemy_spawner = NodePath("SpawnersContainer/EnemySpawner")
+destructible_spawner = NodePath("SpawnersContainer/DestructibleSpawner")
+loot_spawner = NodePath("SpawnersContainer/LootSpawner")
 
 [node name="LevelManager" type="Node" parent="WorldManager"]
 script = ExtResource("3_tefeu")
@@ -41,7 +41,7 @@ script = ExtResource("7_choun")
 [node name="LootSpawner" type="Node" parent="WorldManager/SpawnersContainer"]
 script = ExtResource("8_ya4ey")
 
-[node name="UIManager" type="Node" parent="." node_paths=PackedStringArray("menus_cntr", "huds_cntr")]
+[node name="UIManager" type="CanvasLayer" parent="." node_paths=PackedStringArray("menus_cntr", "huds_cntr")]
 script = ExtResource("3_tbgi4")
 menus_cntr = NodePath("MenusContainer")
 huds_cntr = NodePath("HudsContainer")
