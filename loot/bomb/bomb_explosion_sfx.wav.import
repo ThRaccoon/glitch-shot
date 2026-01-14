@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://gdt8edijae8c"
-path="res://.godot/imported/bomb_explosion_sfx.wav-8339ac18f43fa2c2e363996294b7bf5a.sample"
+path="res://.godot/imported/bomb_explosion_sfx.wav-b244fb90beddba1ed4de23f84fd2a587.sample"
 
 [deps]
 
-source_file="res://loot/bombs/bomb_explosion_sfx.wav"
-dest_files=["res://.godot/imported/bomb_explosion_sfx.wav-8339ac18f43fa2c2e363996294b7bf5a.sample"]
+source_file="res://loot/bomb/bomb_explosion_sfx.wav"
+dest_files=["res://.godot/imported/bomb_explosion_sfx.wav-b244fb90beddba1ed4de23f84fd2a587.sample"]
 
 [params]
 

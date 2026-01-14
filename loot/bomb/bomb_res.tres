@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="LootData" load_steps=4 format=3 uid="uid://7a5k4b0bkjp5"]
 
 [ext_resource type="Script" uid="uid://wabtny1whe5u" path="res://loot/loot_data.gd" id="1_ghtwp"]
-[ext_resource type="AudioStream" uid="uid://euoq1sra222j" path="res://loot/bombs/bomb_pickup_sfx.wav" id="1_ocgxo"]
-[ext_resource type="Texture2D" uid="uid://b6odicc72rux5" path="res://loot/bombs/bomb_f0.png" id="3_48gsi"]
+[ext_resource type="AudioStream" uid="uid://euoq1sra222j" path="res://loot/bomb/bomb_pickup_sfx.wav" id="1_ocgxo"]
+[ext_resource type="Texture2D" uid="uid://b6odicc72rux5" path="res://loot/bomb/bomb_f0.png" id="3_48gsi"]
 
 [resource]
 script = ExtResource("1_ghtwp")

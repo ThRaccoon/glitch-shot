@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1gyjs0ddhhqy"]
+[gd_scene load_steps=6 format=3 uid="uid://c1gyjs0ddhhqy"]
 
 [ext_resource type="Script" uid="uid://d3wchds18csy" path="res://player/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://d1xr5gtwlc3da" path="res://components/health_component/health_component.tscn" id="2_72s8p"]
 [ext_resource type="PackedScene" uid="uid://d3f8sb4lvkf30" path="res://player/guns/gun.tscn" id="2_mj2xy"]
+[ext_resource type="PackedScene" uid="uid://bq3lnul1266q" path="res://loot/bomb/bomb.tscn" id="2_yw30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_72s8p"]
 
@@ -15,6 +16,7 @@ hero_a_sprite = NodePath("HeroASprite")
 hero_collider = NodePath("HeroCollider")
 audio_player = NodePath("AudioPlayer")
 health_comp = NodePath("ComponentsContainer/HealthComponent")
+bomb_scene = ExtResource("2_yw30f")
 
 [node name="HeroASprite" type="AnimatedSprite2D" parent="."]
 

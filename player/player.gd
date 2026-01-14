@@ -5,6 +5,8 @@ class_name Player extends CharacterBody2D
 @export var audio_player: AudioStreamPlayer2D
 @export var health_comp: HealthComponent
 
+@export var bomb_scene: PackedScene
+
 # Stats
 var move_speed: float
 
@@ -15,15 +17,21 @@ var crnt_ability: BaseAbility
 var is_setuped: bool
 var crnt_bomb_count: int
 var input_dir: Vector2 
+var entities_container: Node2D
 
 func _ready() -> void:
 	_setup()
+	
+	entities_container = get_tree().root.find_child("EntitiesContainer", true, false)
 	
 func _process(_delta: float) -> void:
 	if not is_setuped:
 		return
 	
 	input_dir = Input.get_vector("left", "right", "up", "down")
+	
+	if Input.is_action_just_pressed("throw_bomb"):
+		_throw_bomb()
 	
 	if Input.is_action_pressed("ability"):
 		crnt_ability.cast()
@@ -49,7 +57,7 @@ func _on_health_component_health_changed_sig(_current_hp: float, _max_hp: float)
 	pass
 
 func _on_health_component_health_depleted_sig() -> void:
-	pass
+	queue_free()
 
 func set_hero_data(data: HeroData) -> void:
 	hero_data = data
@@ -97,3 +105,18 @@ func _setup_components() -> void:
 		return
 	
 	health_comp.setup(hero_data.health, hero_data.max_health)
+	
+func _throw_bomb() -> void:
+	if crnt_bomb_count <= 0:
+		return
+	
+	crnt_bomb_count -= 1
+	
+	if not bomb_scene:
+		push_warning("bomb_scene is null")
+		return
+		
+	var bomb = bomb_scene.instantiate()
+	
+	entities_container.add_child(bomb)
+	bomb.global_position = global_position
