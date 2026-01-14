@@ -1,19 +1,25 @@
-[gd_resource type="Resource" script_class="HeroData" load_steps=4 format=3 uid="uid://c3i4plutp2j1e"]
+[gd_resource type="Resource" script_class="HeroData" load_steps=7 format=3 uid="uid://c3i4plutp2j1e"]
 
 [ext_resource type="PackedScene" uid="uid://d1yav0xc07n7" path="res://player/abilities/fear/fear_ability.tscn" id="1_gtm0n"]
 [ext_resource type="Script" uid="uid://dufcb46b54xy3" path="res://player/heroes/hero_data.gd" id="1_hv0n3"]
 [ext_resource type="SpriteFrames" uid="uid://13hmdo0v5p3e" path="res://player/heroes/lizard/lizard_m/lizard_m_anims.tres" id="1_skse7"]
+[ext_resource type="AudioStream" uid="uid://c38nbqx1gs884" path="res://player/abilities/fear/fear_ability_sfx.wav" id="2_irh86"]
+[ext_resource type="AudioStream" uid="uid://bppyrlsgrkydq" path="res://player/heroes/hero_death_sfx.wav" id="4_gwkck"]
+[ext_resource type="AudioStream" uid="uid://p5gqmuesnutf" path="res://player/heroes/hero_m_hurt_sfx.wav" id="5_30hmr"]
 
 [resource]
 script = ExtResource("1_hv0n3")
 health = 3.0
 max_health = 3.0
-damage = 1.75
 move_speed = 28.5
+max_bombs = 5
 ability_type = 3
 ability_scene = ExtResource("1_gtm0n")
 ability_cooldown = 7.0
 animations = ExtResource("1_skse7")
+hurt_sfx = ExtResource("5_30hmr")
+death_sfx = ExtResource("4_gwkck")
+ability_sfx = ExtResource("2_irh86")
 collider_size = Vector2(16, 16)
 collider_pos = Vector2(0, 6)
 metadata/_custom_type_script = "uid://dufcb46b54xy3"

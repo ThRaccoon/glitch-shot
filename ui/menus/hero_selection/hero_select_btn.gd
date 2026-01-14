@@ -10,18 +10,20 @@ func _on_pressed() -> void:
 	
 func _on_mouse_entered() -> void:
 	if hero_data:
-		var ability_type: String = Enums.HeroAbilityType.keys()[hero_data.ability_type]
+		var ability_type: String = HeroData.HeroAbilityType.keys()[hero_data.ability_type]
 		
 		info.text = """
 		Health:   {health}
 		Max Health:   {max_health}
 		Move Speed:   {move_speed}
+		Max Bombs:   {max_bombs}
 		Ability Type:   {ability_type}
 		Ability Cooldown: {ability_cooldown}s
 		""".format({
 			"health": hero_data.health,
 			"max_health": hero_data.max_health,
 			"move_speed": hero_data.move_speed,
+			"max_bombs" : hero_data.max_bombs,
 			"ability_type": ability_type,
 			"ability_cooldown": hero_data.ability_cooldown
 		})

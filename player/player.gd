@@ -2,14 +2,18 @@ class_name Player extends CharacterBody2D
 
 @export var hero_a_sprite: AnimatedSprite2D
 @export var hero_collider: CollisionShape2D
+@export var audio_player: AudioStreamPlayer2D
 @export var health_comp: HealthComponent
 
+# Stats
+var move_speed: float
+
+# Ability data
 var hero_data: HeroData
 var crnt_ability: BaseAbility
 
-var move_speed: float
-
 var is_setuped: bool
+var crnt_bomb_count: int
 var input_dir: Vector2 
 
 func _ready() -> void:
@@ -49,7 +53,7 @@ func _on_health_component_health_depleted_sig() -> void:
 
 func set_hero_data(data: HeroData) -> void:
 	hero_data = data
-
+	
 func _setup() -> void:
 	if not hero_data:
 		push_error("hero_data is null!")
@@ -58,8 +62,7 @@ func _setup() -> void:
 	_setup_stats()
 	_setup_ability()
 	_setup_visuals()
-	_setup_sounds()
-	_setup_hitbox()
+	_setup_collider()
 	_setup_components()
 	
 	is_setuped = true
@@ -69,7 +72,7 @@ func _setup_stats() -> void:
 	
 func _setup_ability() -> void:
 	if not hero_data.ability_scene:
-		push_error("ability_scene is null")
+		push_error("hero_data.ability_scene is null")
 		return
 	
 	crnt_ability = hero_data.ability_scene.instantiate()
@@ -79,15 +82,12 @@ func _setup_ability() -> void:
 
 func _setup_visuals() -> void:
 	if not hero_data.animations:
-		push_error("animations are null")
+		push_error("hero_data.animations are null")
 		return
 	
 	hero_a_sprite.sprite_frames = hero_data.animations
-
-func _setup_sounds() -> void:
-	pass
 	
-func _setup_hitbox() -> void:
+func _setup_collider() -> void:
 	hero_collider.shape.size = hero_data.collider_size
 	hero_collider.position = hero_data.collider_pos
 

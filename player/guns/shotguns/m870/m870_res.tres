@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="GunData" load_steps=8 format=3 uid="uid://1ntdp1yus4cp"]
+
+[ext_resource type="AudioStream" uid="uid://cwv41xk14ed1l" path="res://player/guns/gun_dry_fire_sfx.wav" id="1_fx0gp"]
+[ext_resource type="Resource" uid="uid://7iqoupn57cmt" path="res://player/guns/shotguns/m870/m870_shell_res.tres" id="1_n304m"]
+[ext_resource type="Script" uid="uid://noiuymv4aqvs" path="res://player/guns/gun_data.gd" id="1_nq1o6"]
+[ext_resource type="AudioStream" uid="uid://oy42adj66uou" path="res://player/guns/gun_reload_sfx.wav" id="2_35g3c"]
+[ext_resource type="Texture2D" uid="uid://bvcqs2ohjmxom" path="res://player/guns/shotguns/m870/textures/m870.png" id="2_dhetm"]
+[ext_resource type="AudioStream" uid="uid://ban1rd7lvd8xn" path="res://player/guns/shotguns/m870/m870_fire_sfx.wav" id="3_vfeh4"]
+[ext_resource type="Texture2D" uid="uid://dmdssy1s0rbk1" path="res://player/guns/shotguns/m870/textures/m870_outln.png" id="4_fx0gp"]
+
+[resource]
+script = ExtResource("1_nq1o6")
+fire_rate = 1.0
+reload_speed = 1.0
+magazine_size = 6
+bullet_data = ExtResource("1_n304m")
+pellet_count = 3
+spread_angle = 20.0
+texture = ExtResource("2_dhetm")
+texture_outlined = ExtResource("4_fx0gp")
+fire_sfx = ExtResource("3_vfeh4")
+dry_fire_sfx = ExtResource("1_fx0gp")
+reload_sfx = ExtResource("2_35g3c")
+sprite_offset = Vector2(12.5, -2.5)
+sprite_scale = Vector2(0.3, 0.3)
+muzzle_position = Vector2(10.2, -1.8)
+metadata/_custom_type_script = "uid://noiuymv4aqvs"

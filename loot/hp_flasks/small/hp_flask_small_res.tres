@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LootData" load_steps=4 format=3 uid="uid://b83bx6bxc6lpq"]
+
+[ext_resource type="AudioStream" uid="uid://bus51y5y7qour" path="res://loot/hp_flasks/hp_flask_pickup_sfx.wav" id="1_3c3ub"]
+[ext_resource type="Script" uid="uid://wabtny1whe5u" path="res://loot/loot_data.gd" id="2_cgo6v"]
+[ext_resource type="Texture2D" uid="uid://bj361js4okgah" path="res://loot/hp_flasks/small/hp_flask_small.png" id="3_j7ife"]
+
+[resource]
+script = ExtResource("2_cgo6v")
+loot_type = 2
+texture = ExtResource("3_j7ife")
+pickup_sfx = ExtResource("1_3c3ub")
+sprite_scale = Vector2(0.5, 0.5)
+metadata/_custom_type_script = "uid://wabtny1whe5u"

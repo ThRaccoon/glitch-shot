@@ -1,19 +1,25 @@
-[gd_resource type="Resource" script_class="HeroData" load_steps=4 format=3 uid="uid://ddespmbjxy0ar"]
+[gd_resource type="Resource" script_class="HeroData" load_steps=7 format=3 uid="uid://ddespmbjxy0ar"]
 
 [ext_resource type="SpriteFrames" uid="uid://bb233fofe8ml" path="res://player/heroes/knight/knight_f/knight_f_anims.tres" id="1_7xqb7"]
 [ext_resource type="Script" uid="uid://dufcb46b54xy3" path="res://player/heroes/hero_data.gd" id="1_adb4v"]
 [ext_resource type="PackedScene" uid="uid://d1shb4h886nmh" path="res://player/abilities/block/block_ability.tscn" id="1_psya5"]
+[ext_resource type="AudioStream" uid="uid://p3e3nqeb2d7p" path="res://player/abilities/block/block_ability_sfx.wav" id="2_dqo20"]
+[ext_resource type="AudioStream" uid="uid://bppyrlsgrkydq" path="res://player/heroes/hero_death_sfx.wav" id="4_ommoo"]
+[ext_resource type="AudioStream" uid="uid://ppg5aiejks7h" path="res://player/heroes/hero_f_hurt_sfx.wav" id="5_igv2k"]
 
 [resource]
 script = ExtResource("1_adb4v")
 health = 4.0
 max_health = 4.0
-damage = 0.9
 move_speed = 31.5
+max_bombs = 3
 ability_type = 2
 ability_scene = ExtResource("1_psya5")
 ability_cooldown = 6.5
 animations = ExtResource("1_7xqb7")
+hurt_sfx = ExtResource("5_igv2k")
+death_sfx = ExtResource("4_ommoo")
+ability_sfx = ExtResource("2_dqo20")
 collider_size = Vector2(15, 16)
 collider_pos = Vector2(0, 6.5)
 metadata/_custom_type_script = "uid://dufcb46b54xy3"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BulletData" load_steps=3 format=3 uid="uid://citiikyhpw5bh"]
+
+[ext_resource type="PackedScene" uid="uid://d17ejy6af4uwi" path="res://player/guns/bullet.tscn" id="1_mx6jt"]
+[ext_resource type="Script" uid="uid://bkipkw013kc1d" path="res://player/guns/bullet_data.gd" id="1_tvpxj"]
+
+[resource]
+script = ExtResource("1_tvpxj")
+bullet_scene = ExtResource("1_mx6jt")
+damage = 0.25
+speed = 600.0
+length = 3.0
+metadata/_custom_type_script = "uid://bkipkw013kc1d"

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="GunData" load_steps=8 format=3 uid="uid://bgds4nvwcm4o0"]
+
+[ext_resource type="Script" uid="uid://noiuymv4aqvs" path="res://player/guns/gun_data.gd" id="1_ejxin"]
+[ext_resource type="AudioStream" uid="uid://cwv41xk14ed1l" path="res://player/guns/gun_dry_fire_sfx.wav" id="1_ewmeg"]
+[ext_resource type="Resource" uid="uid://b1qfddwu008do" path="res://player/guns/shotguns/w21/w21_shell_res.tres" id="1_ygydc"]
+[ext_resource type="Texture2D" uid="uid://uk3i3wkyvcq" path="res://player/guns/shotguns/w21/textures/w21.png" id="2_p2cck"]
+[ext_resource type="AudioStream" uid="uid://oy42adj66uou" path="res://player/guns/gun_reload_sfx.wav" id="2_ygydc"]
+[ext_resource type="Texture2D" uid="uid://c3f8mo73rxw04" path="res://player/guns/shotguns/w21/textures/w21_outln.png" id="3_tmyme"]
+[ext_resource type="AudioStream" uid="uid://ckw7ajahs2imb" path="res://player/guns/shotguns/w21/w21_fire_sfx.wav" id="3_y6ixi"]
+
+[resource]
+script = ExtResource("1_ejxin")
+fire_rate = 0.5
+reload_speed = 1.0
+magazine_size = 2
+bullet_data = ExtResource("1_ygydc")
+pellet_count = 5
+spread_angle = 30.0
+texture = ExtResource("2_p2cck")
+texture_outlined = ExtResource("3_tmyme")
+fire_sfx = ExtResource("3_y6ixi")
+dry_fire_sfx = ExtResource("1_ewmeg")
+reload_sfx = ExtResource("2_ygydc")
+sprite_offset = Vector2(7.5, -1.5)
+sprite_scale = Vector2(0.5, 0.5)
+muzzle_position = Vector2(11.5, -1.5)
+metadata/_custom_type_script = "uid://noiuymv4aqvs"

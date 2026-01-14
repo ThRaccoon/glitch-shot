@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d17ejy6af4uwi"]
+
+[ext_resource type="Script" uid="uid://c236k7viapr8b" path="res://player/guns/bullet.gd" id="1_2fbct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh4a2"]
+
+[node name="Bullet" type="Area2D" node_paths=PackedStringArray("tracer", "collider", "lifetime_timer")]
+z_index = 6
+collision_layer = 32
+collision_mask = 13
+script = ExtResource("1_2fbct")
+tracer = NodePath("Tracer")
+collider = NodePath("Collider")
+lifetime_timer = NodePath("LifetimeTimer")
+
+[node name="Tracer" type="Line2D" parent="."]
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xh4a2")
+
+[node name="LifetimeTimer" type="Timer" parent="."]

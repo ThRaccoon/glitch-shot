@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="GunData" load_steps=8 format=3 uid="uid://obwlqpokbvxf"]
+
+[ext_resource type="Script" uid="uid://noiuymv4aqvs" path="res://player/guns/gun_data.gd" id="1_37g7d"]
+[ext_resource type="AudioStream" uid="uid://cwv41xk14ed1l" path="res://player/guns/gun_dry_fire_sfx.wav" id="1_ef67h"]
+[ext_resource type="Resource" uid="uid://dt1x0a013f62k" path="res://player/guns/rifles/thompson/thompson_bullet_res.tres" id="1_pm77b"]
+[ext_resource type="Texture2D" uid="uid://b3jua76v5nmev" path="res://player/guns/rifles/thompson/textures/thompson.png" id="2_8uw7k"]
+[ext_resource type="AudioStream" uid="uid://oy42adj66uou" path="res://player/guns/gun_reload_sfx.wav" id="2_o0i6f"]
+[ext_resource type="AudioStream" uid="uid://bssoa2sobtx86" path="res://player/guns/rifles/thompson/thompson_fire_sfx.wav" id="2_pm77b"]
+[ext_resource type="Texture2D" uid="uid://c808dsj3duh8t" path="res://player/guns/rifles/thompson/textures/thompson_outln.png" id="3_8wu1y"]
+
+[resource]
+script = ExtResource("1_37g7d")
+fire_mode = 1
+fire_rate = 0.25
+reload_speed = 1.0
+magazine_size = 30
+bullet_data = ExtResource("1_pm77b")
+pellet_count = 1
+texture = ExtResource("2_8uw7k")
+texture_outlined = ExtResource("3_8wu1y")
+fire_sfx = ExtResource("2_pm77b")
+dry_fire_sfx = ExtResource("1_ef67h")
+reload_sfx = ExtResource("2_o0i6f")
+sprite_offset = Vector2(7, 1)
+sprite_scale = Vector2(0.5, 0.5)
+muzzle_position = Vector2(14.5, -1)
+metadata/_custom_type_script = "uid://noiuymv4aqvs"

@@ -2,10 +2,10 @@ class_name UIManager extends Node
 
 enum MenuType { MAIN_MENU, HERO_SELECTION }
 
-@export var menus_cntr: Control
-@export var huds_cntr: Control
+@export var menus_container: Control
+@export var huds_container: Control
 
-var menu_registry: Dictionary[MenuType, String] = {
+var menu_uid_registry: Dictionary[MenuType, String] = {
 	MenuType.MAIN_MENU : "uid://de0x2l5dpsnw4",
 	MenuType.HERO_SELECTION : "uid://dkm852tqgdfpn"
 }
@@ -21,40 +21,40 @@ func _ready() -> void:
 	
 	open_menu(MenuType.MAIN_MENU)
 
-func open_menu(key: MenuType) -> void:
-	if not menu_registry.has(key):
-		push_warning("Menu key not found in registry: ", key)
+func open_menu(type: MenuType) -> void:
+	if not menu_uid_registry.has(type):
+		push_warning("menu_uid_registry does not contain menu from type %s" % type)
 		return
 	
-	if active_menus.has(key):
+	if active_menus.has(type):
 		return
 	
-	var menu_rsrc: PackedScene = load(menu_registry[key]) 
+	var menu_rsrc: PackedScene = load(menu_uid_registry[type]) 
 	var new_menu: Control = menu_rsrc.instantiate()
 	add_child(new_menu)
-	active_menus[key] = new_menu
+	active_menus[type] = new_menu
 		
-func show_menu(key: MenuType) -> void:
-	if not active_menus.has(key):
-		push_warning("Menu key not found in active menus: ", key)
+func show_menu(type: MenuType) -> void:
+	if not active_menus.has(type):
+		push_warning("active_menus does not contain menu from type %s" % type)
 		return
 	
-	active_menus[key].visible = true
+	active_menus[type].visible = true
 	
-func hide_menu(key: MenuType) -> void:
-	if not active_menus.has(key):
-		push_warning("Menu key not found in active menus: ", key)
+func hide_menu(type: MenuType) -> void:
+	if not active_menus.has(type):
+		push_warning("active_menus does not contain menu from type %s" % type)
 		return
 	
-	active_menus[key].visible = false
+	active_menus[type].visible = false
 	
-func close_menu(key: MenuType) -> void:
-	if not active_menus.has(key):
-		push_warning("Menu key not found in active menus: ", key)
+func close_menu(type: MenuType) -> void:
+	if not active_menus.has(type):
+		push_warning("active_menus does not contain menu from type %s" % type)
 		return
 	
-	active_menus[key].queue_free()
-	active_menus.erase(key)
+	active_menus[type].queue_free()
+	active_menus.erase(type)
 
 func close_all_menus() -> void:
 	for menu in active_menus:

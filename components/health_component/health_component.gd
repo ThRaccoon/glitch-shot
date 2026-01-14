@@ -10,6 +10,7 @@ var is_damage_blocked: bool
 func setup(init_hp: float, init_max_hp: float) -> void:
 	max_health = init_max_hp
 	current_health = init_hp
+	
 	health_changed_sig.emit(current_health, max_health)
 
 func take_damage(amount: float) -> void:

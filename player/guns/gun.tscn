@@ -1,13 +1,29 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3f8sb4lvkf30"]
 
 [ext_resource type="Script" uid="uid://i7hil7ncbjo8" path="res://player/guns/gun.gd" id="1_idnmr"]
-[ext_resource type="Texture2D" uid="uid://b3jua76v5nmev" path="res://player/guns/smgs/thompson/thompson.png" id="2_dgxdn"]
+[ext_resource type="Texture2D" uid="uid://dbuiwfn53e3uq" path="res://player/guns/snipers/m2010/textures/m2010.png" id="2_dgxdn"]
 
-[node name="Gun" type="Node2D" node_paths=PackedStringArray("gun_sprite")]
+[node name="Gun" type="Node2D" node_paths=PackedStringArray("gun_sprite", "muzzle", "audio_player", "fire_rate_timer", "reload_timer")]
 script = ExtResource("1_idnmr")
 gun_sprite = NodePath("GunSprite")
+muzzle = NodePath("Muzzle")
+audio_player = NodePath("AudioPlayer")
+fire_rate_timer = NodePath("FireRateTimer")
+reload_timer = NodePath("ReloadTimer")
 
 [node name="GunSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_dgxdn")
-offset = Vector2(6.5, 0)
+offset = Vector2(5, -1)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(10, -0.75)
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="FireRateTimer" type="Timer" parent="."]
+
+[node name="ReloadTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

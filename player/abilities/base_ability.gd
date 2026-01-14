@@ -14,6 +14,12 @@ func cast() -> void:
 	if not is_ready:
 		return
 		
+	if not player.hero_data.ability_sfx:
+		push_warning("player.hero_data.ability_sfx is null")
+	else:
+		player.audio_player.stream = player.hero_data.ability_sfx
+		player.audio_player.play()
+		
 	is_ready = false
 		
 	_on_cast()

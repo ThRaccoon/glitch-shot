@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="GunData" load_steps=8 format=3 uid="uid://bayd717ckvw7g"]
+
+[ext_resource type="Script" uid="uid://noiuymv4aqvs" path="res://player/guns/gun_data.gd" id="1_20ouw"]
+[ext_resource type="Resource" uid="uid://c5dfu4bsmrloa" path="res://player/guns/pistols/p250/p250_bullet_res.tres" id="1_h8isn"]
+[ext_resource type="AudioStream" uid="uid://cwv41xk14ed1l" path="res://player/guns/gun_dry_fire_sfx.wav" id="2_blslw"]
+[ext_resource type="AudioStream" uid="uid://oy42adj66uou" path="res://player/guns/gun_reload_sfx.wav" id="2_h8isn"]
+[ext_resource type="AudioStream" uid="uid://bi50bn17rol6l" path="res://player/guns/pistols/p250/p250_fire_sfx.wav" id="3_blslw"]
+[ext_resource type="Texture2D" uid="uid://drflai4lmcka7" path="res://player/guns/pistols/p250/textures/p250.png" id="5_172m6"]
+[ext_resource type="Texture2D" uid="uid://b2ncua4j1ituj" path="res://player/guns/pistols/p250/textures/p250_outln.png" id="6_b4hu1"]
+
+[resource]
+script = ExtResource("1_20ouw")
+fire_rate = 0.3
+reload_speed = 0.5
+magazine_size = 12
+bullet_data = ExtResource("1_h8isn")
+pellet_count = 1
+texture = ExtResource("5_172m6")
+texture_outlined = ExtResource("6_b4hu1")
+fire_sfx = ExtResource("3_blslw")
+dry_fire_sfx = ExtResource("2_blslw")
+reload_sfx = ExtResource("2_h8isn")
+sprite_offset = Vector2(1.5, 0)
+sprite_scale = Vector2(0.5, 0.5)
+muzzle_position = Vector2(4.5, -1.5)
+metadata/_custom_type_script = "uid://noiuymv4aqvs"
