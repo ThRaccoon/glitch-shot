@@ -5,16 +5,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wcy8q"]
 size = Vector2(5, 5)
 
-[node name="Loot" type="Area2D" node_paths=PackedStringArray("loot_sprite")]
-z_index = 1
-collision_layer = 16
+[node name="Loot" type="Area2D" node_paths=PackedStringArray("loot_sprite", "audio_player")]
+z_index = 2
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_wcy8q")
 loot_sprite = NodePath("LootSprite")
+audio_player = NodePath("AudioPlayer")
 
 [node name="LootSprite" type="Sprite2D" parent="."]
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wcy8q")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blqfavnhu6ajn"]
+[gd_scene load_steps=13 format=3 uid="uid://blqfavnhu6ajn"]
 
 [ext_resource type="Script" uid="uid://d0khsskalwf83" path="res://managers/game_manager.gd" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://go0mhkypot0g" path="res://managers/world_manager.gd" id="2_jyhfs"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://c2nijn1j6q7di" path="res://managers/level_manager.gd" id="3_tefeu"]
 [ext_resource type="Script" uid="uid://sy046viy6i4c" path="res://spawners/enemy_spawner.gd" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://dg4boiq6505a6" path="res://spawners/player_spawner.gd" id="5_85g3d"]
+[ext_resource type="PackedScene" uid="uid://c1gyjs0ddhhqy" path="res://player/player.tscn" id="5_efxa6"]
 [ext_resource type="Script" uid="uid://bh3jfiomyv1je" path="res://spawners/destructible_spawner.gd" id="7_choun"]
+[ext_resource type="PackedScene" uid="uid://dv7q1ufs0j84p" path="res://destructibles/destructible.tscn" id="8_dg77c"]
 [ext_resource type="PackedScene" uid="uid://bnw8ruatf6r0p" path="res://player/guns/dropped_gun.tscn" id="8_kek77"]
 [ext_resource type="Script" uid="uid://dr3h05jg31qii" path="res://spawners/loot_spawner.gd" id="8_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://ij5ak5eyb5np" path="res://loot/loot.tscn" id="9_4c57u"]
@@ -34,6 +36,7 @@ script = ExtResource("3_tefeu")
 [node name="PlayerSpawner" type="Node" parent="WorldManager/SpawnersContainer" node_paths=PackedStringArray("entities_container")]
 script = ExtResource("5_85g3d")
 entities_container = NodePath("../../EntitiesContainer")
+player_scene = ExtResource("5_efxa6")
 
 [node name="EnemySpawner" type="Node" parent="WorldManager/SpawnersContainer" node_paths=PackedStringArray("entities_container")]
 script = ExtResource("4_tbgi4")
@@ -42,6 +45,7 @@ entities_container = NodePath("../../EntitiesContainer")
 [node name="DestructibleSpawner" type="Node" parent="WorldManager/SpawnersContainer" node_paths=PackedStringArray("entities_container")]
 script = ExtResource("7_choun")
 entities_container = NodePath("../../EntitiesContainer")
+destructible_scene = ExtResource("8_dg77c")
 
 [node name="LootSpawner" type="Node" parent="WorldManager/SpawnersContainer" node_paths=PackedStringArray("entities_container")]
 script = ExtResource("8_ya4ey")

@@ -2,24 +2,21 @@ class_name PlayerSpawner extends Node
 
 signal player_loaded_sig
 
-const PLAYER_SCENE_UID: String = "uid://c1gyjs0ddhhqy"
-
 @export var entities_container: Node2D
+@export var player_scene: PackedScene
 
 var player: Player
 
-func spawn_player(data: HeroData, spn_pts: Array = []) -> void:
-	var player_scene: PackedScene = load(PLAYER_SCENE_UID)
-	
+func spawn_player(data: HeroData, spawn_points: Array = []) -> void:
 	if not player_scene:
-		push_warning("Failed to load player scene with uid %s" % PLAYER_SCENE_UID)
+		push_warning("Failed to load player scene")
 		return
 		
 	player = player_scene.instantiate()
 	player.set_hero_data(data)
 	
-	if not spn_pts.is_empty():
-		var random_pos = spn_pts.pick_random()
+	if not spawn_points.is_empty():
+		var random_pos = spawn_points.pick_random()
 		player.global_position = random_pos
  	
 	player.ready.connect(_on_player_ready)

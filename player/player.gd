@@ -96,6 +96,10 @@ func _setup_visuals() -> void:
 	hero_a_sprite.sprite_frames = hero_data.animations
 	
 func _setup_collider() -> void:
+	if not hero_collider.shape is RectangleShape2D:
+		push_error("Heroes are ment to work with RectangleShape2D")
+		return
+	
 	hero_collider.shape.size = hero_data.collider_size
 	hero_collider.position = hero_data.collider_pos
 

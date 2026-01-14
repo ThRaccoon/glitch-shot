@@ -9,7 +9,12 @@ signal load_initial_gun_sig(data: GunData)
 signal swap_gun_sig(data: GunData, mag_count: int)
 signal spawn_dropped_gun_sig(data: GunData, mag_count: int, pos: Vector2)
 
-# Loot related
+# Drop Gun / Loot related
+signal spawn_rand_gun_sig(pos: Vector2)
+signal spawn_rand_loot_sig(pos: Vector2)
+
+# DEBUG related
+signal spawn_gun_sig(data: GunData, mag_count: int, pos: Vector2)
 signal spawn_loot_sig(data: LootData, pos: Vector2)
 
 # Menu related

@@ -24,10 +24,13 @@ func _on_level_loaded() -> void:
 	player_spawner.spawn_player(pending_hero_data, player_spawn_points)
 	pending_hero_data = null
 	
+	destructible_spawner.spawn_destructible(DestructibleData.DestructibleType.CHEST, Vector2(50, 50))
+	
 func _on_player_loaded() -> void:
-	var initial_gun_data = loot_spawner.get_random_gun_data_by_type(GunData.GunType.PISTOL)
+	var initial_gun_data = loot_spawner.get_rand_gun_data_by_type(GunData.GunType.PISTOL)
 	
 	SignalBus.load_initial_gun_sig.emit(initial_gun_data)
-	SignalBus.spawn_dropped_gun_sig.emit(loot_spawner.get_random_gun_data(), 0, Vector2.ZERO)
-	
+	 
+	# Debug
+	SignalBus.spawn_dropped_gun_sig.emit(loot_spawner.get_gun_data_by_uid("uid://cgkcyxdp0hjr7"), 0, Vector2.ZERO)
 	SignalBus.spawn_loot_sig.emit(loot_spawner.get_loot_data_by_uid("uid://7a5k4b0bkjp5"), Vector2(100, 100))

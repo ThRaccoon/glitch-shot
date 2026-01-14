@@ -9,12 +9,13 @@ var bullet_data: BulletData
 var is_setuped: bool
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-
+	body_entered.connect(_on_impact)
+	area_entered.connect(_on_impact)
+	
 func _process(delta: float) -> void:
 	position += Vector2.RIGHT.rotated(rotation) * bullet_data.speed * delta
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_impact(body: Node2D) -> void:
 	var health_comp: HealthComponent = body.find_child("HealthComponent")
 	
 	if health_comp:

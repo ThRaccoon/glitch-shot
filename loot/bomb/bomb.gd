@@ -4,7 +4,10 @@ extends Area2D
 @export var explosion_sfx: AudioStream
 
 func _on_fuse_timer_timeout() -> void:
-	var targets = get_overlapping_bodies()
+	var bodies = get_overlapping_bodies()
+	var areas = get_overlapping_areas()
+
+	var targets = bodies + areas
 
 	for target in targets:
 		var health_comp = target.find_child("HealthComponent", true, false) as HealthComponent
@@ -12,8 +15,9 @@ func _on_fuse_timer_timeout() -> void:
 			health_comp.take_damage(5)
 	
 	visible = false
-	monitoring = false	
-	monitorable = false
+	
+	set_deferred("monitoring", false)
+	set_deferred("monitorable", false)
 	
 	audio_player.stream = explosion_sfx
 	audio_player.play()

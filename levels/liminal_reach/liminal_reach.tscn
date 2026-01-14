@@ -86,28 +86,46 @@ autoplay = "default"
 color = Color(0.98039216, 0.7529412, 0, 1)
 texture = SubResource("GradientTexture2D_pkg7y")
 
-[node name="PlayerSpnPt1" type="Marker2D" parent="SpawnPointsContainer/PlayerSpawnPoints" index="0"]
+[node name="PlayerSpawnPoint1" type="Marker2D" parent="SpawnPointsContainer/PlayerSpawnPoints" index="0"]
 position = Vector2(-50, -85)
 
-[node name="PlayerSpnPt2" type="Marker2D" parent="SpawnPointsContainer/PlayerSpawnPoints" index="1"]
+[node name="PlayerSpawnPoint2" type="Marker2D" parent="SpawnPointsContainer/PlayerSpawnPoints" index="1"]
 position = Vector2(80, -70)
 
-[node name="PlayerSpnPt3" type="Marker2D" parent="SpawnPointsContainer/PlayerSpawnPoints" index="2"]
+[node name="PlayerSpawnPoint3" type="Marker2D" parent="SpawnPointsContainer/PlayerSpawnPoints" index="2"]
 position = Vector2(65, 75)
 
-[node name="PlayerSpnPt4" type="Marker2D" parent="SpawnPointsContainer/PlayerSpawnPoints" index="3"]
+[node name="PlayerSpawnPoint4" type="Marker2D" parent="SpawnPointsContainer/PlayerSpawnPoints" index="3"]
 position = Vector2(-65, 45)
 
-[node name="MinionSpnPt1" type="Marker2D" parent="SpawnPointsContainer/MinionSpawnPoints" index="0"]
+[node name="MinionSpawnPoint1" type="Marker2D" parent="SpawnPointsContainer/MinionSpawnPoints" index="0"]
 position = Vector2(0, -380)
 
-[node name="MinionSpnPt2" type="Marker2D" parent="SpawnPointsContainer/MinionSpawnPoints" index="1"]
+[node name="MinionSpawnPoint2" type="Marker2D" parent="SpawnPointsContainer/MinionSpawnPoints" index="1"]
 position = Vector2(380, 0)
 
-[node name="MinionSpnPt3" type="Marker2D" parent="SpawnPointsContainer/MinionSpawnPoints" index="2"]
+[node name="MinionSpawnPoint3" type="Marker2D" parent="SpawnPointsContainer/MinionSpawnPoints" index="2"]
 position = Vector2(0, 380)
 
-[node name="MinionSpnPt4" type="Marker2D" parent="SpawnPointsContainer/MinionSpawnPoints" index="3"]
+[node name="MinionSpawnPoint4" type="Marker2D" parent="SpawnPointsContainer/MinionSpawnPoints" index="3"]
 position = Vector2(-380, 0)
 
-[node name="TreasureSpnPt1" type="Marker2D" parent="SpawnPointsContainer/TreasureSpawnPoints" index="0"]
+[node name="DestructibleSpawnPoint1" type="Marker2D" parent="SpawnPointsContainer/DestructibleSpawnPoints" index="0"]
+position = Vector2(-150, -280)
+
+[node name="DestructibleSpawnPoint2" type="Marker2D" parent="SpawnPointsContainer/DestructibleSpawnPoints" index="1"]
+position = Vector2(200, -295)
+
+[node name="DestructibleSpawnPoint3" type="Marker2D" parent="SpawnPointsContainer/DestructibleSpawnPoints" index="2"]
+position = Vector2(290, -70)
+
+[node name="DestructibleSpawnPoint4" type="Marker2D" parent="SpawnPointsContainer/DestructibleSpawnPoints" index="3"]
+position = Vector2(170, 285)
+
+[node name="DestructibleSpawnPoint5" type="Marker2D" parent="SpawnPointsContainer/DestructibleSpawnPoints" index="4"]
+position = Vector2(-250, 275)
+
+[node name="DestructibleSpawnPoint6" type="Marker2D" parent="SpawnPointsContainer/DestructibleSpawnPoints" index="5"]
+position = Vector2(-280, 35)
+
+[node name="TreasureSpawnPoint1" type="Marker2D" parent="SpawnPointsContainer/TreasureSpawnPoints" index="0"]

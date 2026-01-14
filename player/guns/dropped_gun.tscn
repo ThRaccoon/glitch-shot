@@ -6,8 +6,8 @@
 size = Vector2(20, 12)
 
 [node name="DroppedGun" type="Area2D" node_paths=PackedStringArray("gun_sprite", "interaction_label")]
-z_index = 1
-collision_layer = 16
+z_index = 2
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_bkw5q")
 gun_sprite = NodePath("GunSprite")

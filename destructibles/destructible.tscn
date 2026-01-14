@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv7q1ufs0j84p"]
+
+[ext_resource type="Script" uid="uid://da2pijhby85wq" path="res://destructibles/destructible.gd" id="1_v7w3s"]
+[ext_resource type="PackedScene" uid="uid://d1xr5gtwlc3da" path="res://components/health_component/health_component.tscn" id="2_af82q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af82q"]
+
+[node name="Destructible" type="Area2D" node_paths=PackedStringArray("destructible_sprite", "collider", "health_comp")]
+z_index = 1
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_v7w3s")
+destructible_sprite = NodePath("DestructibleSprite")
+collider = NodePath("Collider")
+health_comp = NodePath("HealthComponent")
+
+[node name="DestructibleSprite" type="Sprite2D" parent="."]
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_af82q")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_af82q")]
+
+[connection signal="health_changed_sig" from="HealthComponent" to="." method="_on_health_component_health_changed_sig"]
+[connection signal="health_depleted_sig" from="HealthComponent" to="." method="_on_health_component_health_depleted_sig"]
