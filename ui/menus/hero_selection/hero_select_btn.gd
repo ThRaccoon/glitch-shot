@@ -5,6 +5,7 @@ extends Button
 
 func _on_pressed() -> void:
 	SignalBus.hero_selected_sig.emit(hero_data)
+	SignalBus.open_menu_sig.emit(UIManager.MenuType.IN_GAME_HUD)
 	SignalBus.close_menu_sig.emit(UIManager.MenuType.MAIN_MENU)
 	SignalBus.close_menu_sig.emit(UIManager.MenuType.HERO_SELECTION)
 	

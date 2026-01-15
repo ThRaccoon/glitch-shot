@@ -1,6 +1,6 @@
 class_name HeroData extends Resource
 
-enum HeroAbilityType { STUN, SPRINT, BLOCK, FEAR, BLINK }
+enum HeroAbilityType { NONE, SPRINT, BLOCK, BLINK }
 
 @export_group("Stats")
 @export var health: float

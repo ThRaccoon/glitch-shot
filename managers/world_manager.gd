@@ -2,6 +2,7 @@ class_name WorldManager extends Node
 
 @export_group("Managers")
 @export var lvl_mngr: LevelManager 
+@export var wave_mngr: WaveManager
 
 @export_group("Spawners")
 @export var player_spawner: PlayerSpawner
@@ -19,21 +20,24 @@ func prepare_world(hero_data: HeroData) -> void:
 	pending_hero_data = hero_data
 	lvl_mngr.load_random_level()
 
-func _on_level_loaded() -> void:	
+func _on_level_loaded() -> void:
 	var player_spawn_points: Array = lvl_mngr.spawn_points[lvl_mngr.SpawnPointType.PLAYER]
 	player_spawner.spawn_player(pending_hero_data, player_spawn_points)
+	
+	# Set  initial player hp / bombs
+	SignalBus.hp = pending_hero_data.health
+	SignalBus.max_hp = pending_hero_data.max_health
+	SignalBus.max_bombs = pending_hero_data.max_bombs
+	
 	pending_hero_data = null
 	
-	destructible_spawner.spawn_destructible(DestructibleData.DestructibleType.CHEST, Vector2(50, 50))
-	
 func _on_player_loaded() -> void:
-	enemy_spawner.set_player(player_spawner.player)
-	enemy_spawner.spawn_enemy(EnemySpawner.EnemyType.RANGE, "uid://bc1s7irfi0l25", Vector2(100, 100))
-	
 	var initial_gun_data = loot_spawner.get_rand_gun_data_by_type(GunData.GunType.PISTOL)
-	
 	SignalBus.load_initial_gun_sig.emit(initial_gun_data)
-	 
-	# Debug
-	SignalBus.spawn_dropped_gun_sig.emit(loot_spawner.get_gun_data_by_uid("uid://cgkcyxdp0hjr7"), 0, Vector2.ZERO)
-	SignalBus.spawn_loot_sig.emit(loot_spawner.get_loot_data_by_uid("uid://7a5k4b0bkjp5"), Vector2(100, 100))
+	
+	# Set  initial player ammo
+	SignalBus.ammo = initial_gun_data.magazine_size
+	
+	enemy_spawner.set_player(player_spawner.player)
+	
+	wave_mngr.start_next_wave()

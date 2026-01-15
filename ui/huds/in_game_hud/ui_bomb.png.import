@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce28d0asjd5qn"
-path="res://.godot/imported/lizard_f_run_anim_f2.png-28e5b25a6293bfe6749f93aa527163c8.ctex"
+uid="uid://bexwkvewa5rus"
+path="res://.godot/imported/ui_bomb.png-ea153a2880a22ce6d417f0cdb5003feb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/heroes/lizard/lizard_f/run/lizard_f_run_anim_f2.png"
-dest_files=["res://.godot/imported/lizard_f_run_anim_f2.png-28e5b25a6293bfe6749f93aa527163c8.ctex"]
+source_file="res://ui/huds/in_game_hud/ui_bomb.png"
+dest_files=["res://.godot/imported/ui_bomb.png-ea153a2880a22ce6d417f0cdb5003feb.ctex"]
 
 [params]
 

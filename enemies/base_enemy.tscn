@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbr7ihiu8km2k"]
+[gd_scene load_steps=6 format=3 uid="uid://bbr7ihiu8km2k"]
 
 [ext_resource type="Script" uid="uid://b2g7bgyv71sb0" path="res://enemies/base_enemy.gd" id="1_e45cc"]
+[ext_resource type="Shader" uid="uid://bhmk536rj3fgh" path="res://enemies/flash.gdshader" id="2_b5ht1"]
 [ext_resource type="PackedScene" uid="uid://d1xr5gtwlc3da" path="res://components/health_component/health_component.tscn" id="2_np3a0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xens1"]
+resource_local_to_scene = true
+shader = ExtResource("2_b5ht1")
+shader_parameter/active = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xauq"]
 resource_local_to_scene = true
@@ -19,12 +25,12 @@ attack_timer = NodePath("AttackTimer")
 health_comp = NodePath("ComponentsContainer/HealthComponent")
 
 [node name="ASprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_xens1")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8xauq")
 
 [node name="Pathfinder" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="AttackTimer" type="Timer" parent="."]
 one_shot = true

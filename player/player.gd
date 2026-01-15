@@ -15,6 +15,7 @@ var hero_data: HeroData
 var crnt_ability: BaseAbility
 
 var is_setuped: bool
+var last_hp_change: float
 var crnt_bomb_count: int
 var input_dir: Vector2 
 var entities_container: Node2D
@@ -34,7 +35,8 @@ func _process(_delta: float) -> void:
 		_throw_bomb()
 	
 	if Input.is_action_pressed("ability"):
-		crnt_ability.cast()
+		if crnt_ability:
+			crnt_ability.cast()
 	
 	var dir_to_mouse: Vector2 = global_position.direction_to(get_global_mouse_position())
 	var is_facing_right: bool = Vector2.RIGHT.dot(dir_to_mouse) >= 0
@@ -54,8 +56,11 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_health_component_health_changed_sig(_current_hp: float, _max_hp: float) -> void:
-	audio_player.stream = hero_data.hurt_sfx
-	audio_player.play()
+	if _current_hp < last_hp_change:
+		audio_player.stream = hero_data.hurt_sfx
+		audio_player.play()
+
+	SignalBus.hp_changed_sig.emit(_current_hp, _max_hp)
 
 func _on_health_component_health_depleted_sig() -> void:
 	audio_player.stream = hero_data.death_sfx
@@ -75,7 +80,7 @@ func set_hero_data(data: HeroData) -> void:
 	
 func _setup() -> void:
 	if not hero_data:
-		push_error("hero_data is null!")
+		push_warning("hero_data is null!")
 		return
 	
 	_setup_stats()
@@ -90,8 +95,11 @@ func _setup_stats() -> void:
 	move_speed = hero_data.move_speed
 	
 func _setup_ability() -> void:
+	if hero_data.ability_type == hero_data.HeroAbilityType.NONE:
+		return
+	
 	if not hero_data.ability_scene:
-		push_error("hero_data.ability_scene is null")
+		push_warning("hero_data.ability_scene is null")
 		return
 	
 	crnt_ability = hero_data.ability_scene.instantiate()
@@ -101,14 +109,14 @@ func _setup_ability() -> void:
 
 func _setup_visuals() -> void:
 	if not hero_data.animations:
-		push_error("hero_data.animations are null")
+		push_warning("hero_data.animations are null")
 		return
 	
 	hero_a_sprite.sprite_frames = hero_data.animations
 	
 func _setup_collider() -> void:
 	if not hero_collider.shape is RectangleShape2D:
-		push_error("Heroes are ment to work with RectangleShape2D")
+		push_warning("Heroes are ment to work with RectangleShape2D")
 		return
 	
 	hero_collider.shape.size = hero_data.collider_size
@@ -116,9 +124,10 @@ func _setup_collider() -> void:
 
 func _setup_components() -> void:
 	if not health_comp:
-		push_error("health_comp is null")
+		push_warning("health_comp is null")
 		return
 	
+	last_hp_change = hero_data.health
 	health_comp.setup(hero_data.health, hero_data.max_health)
 	
 func _throw_bomb() -> void:
@@ -126,6 +135,7 @@ func _throw_bomb() -> void:
 		return
 	
 	crnt_bomb_count -= 1
+	SignalBus.bombs_changed_sig.emit(crnt_bomb_count, hero_data.max_bombs)
 	
 	if not bomb_scene:
 		push_warning("bomb_scene is null")

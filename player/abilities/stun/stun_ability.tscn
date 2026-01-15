@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvcelpcstk344"]
-
-[ext_resource type="Script" uid="uid://dgimf3pqgbrj8" path="res://player/abilities/stun/stun_ability.gd" id="1_g51rq"]
-
-[node name="StunAbility" type="Node2D"]
-script = ExtResource("1_g51rq")

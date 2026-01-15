@@ -53,6 +53,7 @@ func _on_fire_rate_timer_timeout() -> void:
 	
 func _on_reload_timer_timeout() -> void:
 	crnt_ammo_in_mag = gun_data.magazine_size
+	SignalBus.ammo_changed_sig.emit(crnt_ammo_in_mag)
 	is_reloading = false
 	
 func _setup(data: GunData, ammo_in_mag: int = -1) -> void:
@@ -111,6 +112,7 @@ func _fire() -> void:
 		_spawn_bullet(radians_offset)
 	
 	crnt_ammo_in_mag -= 1
+	SignalBus.ammo_changed_sig.emit(crnt_ammo_in_mag)
 	can_fire = false
 	fire_rate_timer.start()
 	
@@ -156,5 +158,6 @@ func _reload() -> void:
 
 func _swap_gun(data: GunData, ammo_in_mag: int) -> void:
 	SignalBus.spawn_dropped_gun_sig.emit(gun_data, crnt_ammo_in_mag, player_cb.global_position)
-		
+	
 	_setup(data, ammo_in_mag)
+	SignalBus.ammo_changed_sig.emit(crnt_ammo_in_mag)

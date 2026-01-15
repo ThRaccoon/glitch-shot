@@ -11,8 +11,8 @@
 script = ExtResource("1_0sx20")
 health = 5.0
 max_health = 5.0
-move_speed = 25.5
-max_bombs = 4
+move_speed = 26.5
+max_bombs = 5
 ability_type = 2
 ability_scene = ExtResource("1_crqoq")
 ability_cooldown = 8.0

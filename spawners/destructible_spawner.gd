@@ -20,6 +20,6 @@ func spawn_destructible(type: DestructibleData.DestructibleType, pos: Vector2) -
 		return
 		
 	var obj = destructible_scene.instantiate() as Destructible
-	entities_container.add_child(obj)
+	entities_container.call_deferred("add_child", obj)
 	obj.global_position = pos
 	obj.setup(data)

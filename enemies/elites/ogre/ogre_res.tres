@@ -7,8 +7,8 @@
 script = ExtResource("2_fn8el")
 hitbox_size = Vector2(22, 28)
 hitbox_pos = Vector2(0, 5)
-health = 50.0
-max_health = 50.0
+health = 30.0
+max_health = 30.0
 damage = 2.0
 attack_speed = 4.0
 move_speed = 30.0

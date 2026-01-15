@@ -32,6 +32,7 @@ func _attempt_pickup(player: Player) -> void:
 		LootData.LootType.BOMB:
 			if player.crnt_bomb_count < player.hero_data.max_bombs:
 				player.crnt_bomb_count += 1
+				SignalBus.bombs_changed_sig.emit(player.crnt_bomb_count, player.hero_data.max_bombs)
 				_finalize_pickup()
 				
 		LootData.LootType.HP_FLASK_BIG:

@@ -33,9 +33,16 @@ func _on_attack_timer_timeout() -> void:
 	can_attack = true
 
 func _on_health_component_health_changed_sig(_current_hp: Variant, _max_hp: Variant) -> void:
-	pass
-
+	var mat = a_sprite.material as ShaderMaterial
+	
+	if mat:
+		mat.set_shader_parameter("active", true)
+		var tween = create_tween()
+		tween.tween_interval(0.1)  
+		tween.tween_callback(func(): mat.set_shader_parameter("active", false))
+		
 func _on_health_component_health_depleted_sig() -> void:
+	SignalBus.enemy_died_sig.emit()
 	queue_free()
 	
 func set_enemy_data(data: BaseEnemyData) -> void:

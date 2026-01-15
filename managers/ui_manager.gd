@@ -1,13 +1,11 @@
 class_name UIManager extends Node
 
-enum MenuType { MAIN_MENU, HERO_SELECTION }
-
-@export var menus_container: Control
-@export var huds_container: Control
+enum MenuType { MAIN_MENU, HERO_SELECTION, IN_GAME_HUD }
 
 var menu_uid_registry: Dictionary[MenuType, String] = {
 	MenuType.MAIN_MENU : "uid://de0x2l5dpsnw4",
-	MenuType.HERO_SELECTION : "uid://dkm852tqgdfpn"
+	MenuType.HERO_SELECTION : "uid://dkm852tqgdfpn",
+	MenuType.IN_GAME_HUD : "uid://do12yljyg7c4l"
 }
 
 var active_menus: Dictionary[MenuType, Control] = {}

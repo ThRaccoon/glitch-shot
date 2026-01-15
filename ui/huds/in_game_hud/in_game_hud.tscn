@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://do12yljyg7c4l"]
+
+[ext_resource type="Script" uid="uid://cfp0wnoqpmb6h" path="res://ui/huds/in_game_hud/in_game_hud.gd" id="1_v845w"]
+[ext_resource type="Texture2D" uid="uid://bexwkvewa5rus" path="res://ui/huds/in_game_hud/ui_bomb.png" id="2_115sk"]
+[ext_resource type="Texture2D" uid="uid://ddo47eooujl7q" path="res://ui/huds/in_game_hud/ui_heart.png" id="3_taph7"]
+
+[node name="InGameHud" type="Control" node_paths=PackedStringArray("ammo_label", "bomb_label", "hp_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v845w")
+ammo_label = NodePath("MarginContainer/VBoxContainer/AmmoLabel")
+bomb_label = NodePath("MarginContainer2/VBoxContainer/HBoxContainer/BombLabel")
+hp_label = NodePath("MarginContainer2/VBoxContainer/HBoxContainer2/HpLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="AmmoLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 6
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+offset_right = 13.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="BombIcon" type="TextureRect" parent="MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_115sk")
+stretch_mode = 5
+
+[node name="BombLabel" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="HeartIcon" type="TextureRect" parent="MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_taph7")
+stretch_mode = 5
+
+[node name="HpLabel" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6

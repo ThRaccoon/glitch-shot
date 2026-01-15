@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjc1x83dy1jhf"
-path="res://.godot/imported/lizard_f_idle_anim_f3.png-c601ffbdf5fa96a17d8bc10ef0bc94b8.ctex"
+uid="uid://ddo47eooujl7q"
+path="res://.godot/imported/ui_heart.png-8fc541c69bcd851e0fcf049ad36ed53b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/heroes/lizard/lizard_f/idle/lizard_f_idle_anim_f3.png"
-dest_files=["res://.godot/imported/lizard_f_idle_anim_f3.png-c601ffbdf5fa96a17d8bc10ef0bc94b8.ctex"]
+source_file="res://ui/huds/in_game_hud/ui_heart.png"
+dest_files=["res://.godot/imported/ui_heart.png-8fc541c69bcd851e0fcf049ad36ed53b.ctex"]
 
 [params]
 
