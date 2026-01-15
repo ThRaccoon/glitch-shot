@@ -59,10 +59,14 @@ func _on_health_component_health_changed_sig(_current_hp: float, _max_hp: float)
 	if _current_hp < last_hp_change:
 		audio_player.stream = hero_data.hurt_sfx
 		audio_player.play()
-
+	
+	last_hp_change = _current_hp
 	SignalBus.hp_changed_sig.emit(_current_hp, _max_hp)
 
 func _on_health_component_health_depleted_sig() -> void:
+	SignalBus.close_all_menus_sig.emit()
+	SignalBus.open_menu_sig.emit(UIManager.MenuType.END_SCREEN)
+	
 	audio_player.stream = hero_data.death_sfx
 	audio_player.play()
 	

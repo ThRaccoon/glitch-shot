@@ -1,19 +1,21 @@
 class_name WaveManager extends Node
 
-signal wave_completed(wave_num: int)
-
 @export var lvl_mngr: LevelManager
 @export var enemy_spawner: EnemySpawner
 @export var destructible_spawner: DestructibleSpawner
 
-var current_wave: int = 0
-var enemies_alive: int = 0
+var current_wave: int
+var enemies_alive: int
 
 func _ready() -> void:
 	SignalBus.enemy_died_sig.connect(_on_enemy_died)
 
 func start_next_wave() -> void:
 	current_wave += 1
+	SignalBus.crnt_wave_num += 1
+	
+	SignalBus.wave_started_sig.emit(current_wave)
+	
 	if current_wave % 3 == 0:
 		spawn_elite_wave()
 	else:
@@ -21,7 +23,7 @@ func start_next_wave() -> void:
 
 func spawn_normal_wave() -> void:
 	var spawn_points = lvl_mngr.spawn_points[lvl_mngr.SpawnPointType.MINION]
-	var amount = 1 + (current_wave * 2) 
+	var amount = 3 + (current_wave * 2) 
 	
 	for i in range(amount):
 		var pos = spawn_points.pick_random()
@@ -61,7 +63,7 @@ func _handle_wave_end() -> void:
 					crate_points.pick_random()
 				)
 	
-	wave_completed.emit(current_wave)
+	SignalBus.wave_finished_sig.emit(current_wave)
 	
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(10.0).timeout
 	start_next_wave()

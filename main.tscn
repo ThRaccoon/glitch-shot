@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://blqfavnhu6ajn"]
+[gd_scene load_steps=15 format=3 uid="uid://blqfavnhu6ajn"]
 
 [ext_resource type="Script" uid="uid://d0khsskalwf83" path="res://managers/game_manager.gd" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://go0mhkypot0g" path="res://managers/world_manager.gd" id="2_jyhfs"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bnw8ruatf6r0p" path="res://player/guns/dropped_gun.tscn" id="8_kek77"]
 [ext_resource type="Script" uid="uid://dr3h05jg31qii" path="res://spawners/loot_spawner.gd" id="8_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://ij5ak5eyb5np" path="res://loot/loot.tscn" id="9_4c57u"]
+[ext_resource type="AudioStream" uid="uid://bevbmvubx4ka6" path="res://the_rush.mp3" id="14_w48qg"]
 
 [node name="Main" type="Node"]
 
@@ -66,3 +67,7 @@ y_sort_enabled = true
 
 [node name="UIManager" type="CanvasLayer" parent="."]
 script = ExtResource("3_tbgi4")
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_w48qg")
+autoplay = true

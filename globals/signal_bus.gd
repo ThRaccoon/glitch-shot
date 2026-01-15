@@ -5,7 +5,9 @@ var ammo: int
 var max_bombs: int
 var hp: float
 var max_hp: float
- 
+
+var crnt_wave_num: int
+
 @warning_ignore_start("unused_signal")
 # Game related
 signal hero_selected_sig(data: HeroData)
@@ -21,6 +23,10 @@ signal spawn_rand_loot_sig(pos: Vector2)
 
 # Enemies related
 signal enemy_died_sig
+
+# Wave related
+signal wave_started_sig(wave_num: int)
+signal wave_finished_sig(wave_num: int)
 
 # UI related
 signal hp_changed_sig(crnt: float, max: float)

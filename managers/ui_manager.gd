@@ -1,11 +1,12 @@
 class_name UIManager extends Node
 
-enum MenuType { MAIN_MENU, HERO_SELECTION, IN_GAME_HUD }
+enum MenuType { MAIN_MENU, HERO_SELECTION, IN_GAME_HUD, END_SCREEN }
 
 var menu_uid_registry: Dictionary[MenuType, String] = {
 	MenuType.MAIN_MENU : "uid://de0x2l5dpsnw4",
 	MenuType.HERO_SELECTION : "uid://dkm852tqgdfpn",
-	MenuType.IN_GAME_HUD : "uid://do12yljyg7c4l"
+	MenuType.IN_GAME_HUD : "uid://do12yljyg7c4l",
+	MenuType.END_SCREEN : "uid://3c1ldwufudcp"
 }
 
 var active_menus: Dictionary[MenuType, Control] = {}
