@@ -1,9 +1,19 @@
 [gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=3 format=3 uid="uid://b0ye4phv622x0"]
 
-[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/minions/melee/melee_enemy_data.gd" id="1_2srax"]
+[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/melee_enemy_data.gd" id="1_2srax"]
 [ext_resource type="SpriteFrames" uid="uid://c2cu7haidlwcp" path="res://enemies/minions/melee/pumpkin_dude/pumpkin_dude_anims.tres" id="1_8cwxk"]
 
 [resource]
 script = ExtResource("1_2srax")
+hitbox_size = Vector2(16, 22)
+hitbox_pos = Vector2(0, 0.5)
+health = 0.5
+max_health = 0.5
+damage = 10.0
+attack_speed = 0.2
+move_speed = 35.0
+stopping_distance = 0.0
 animations = ExtResource("1_8cwxk")
+collider_size = Vector2(14, 20)
+collider_pos = Vector2(0, 0.5)
 metadata/_custom_type_script = "uid://cwg2q2tahtcc0"

@@ -4,17 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://d1xr5gtwlc3da" path="res://components/health_component/health_component.tscn" id="2_np3a0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xauq"]
+resource_local_to_scene = true
 
-[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("a_sprite", "collider", "pathfinder", "health_comp")]
+[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("a_sprite", "collider", "pathfinder", "attack_timer", "health_comp")]
 z_index = 4
 collision_layer = 4
-collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_e45cc")
 a_sprite = NodePath("ASprite")
 collider = NodePath("Collider")
 pathfinder = NodePath("Pathfinder")
+attack_timer = NodePath("AttackTimer")
 health_comp = NodePath("ComponentsContainer/HealthComponent")
 
 [node name="ASprite" type="AnimatedSprite2D" parent="."]
@@ -25,11 +26,13 @@ shape = SubResource("RectangleShape2D_8xauq")
 [node name="Pathfinder" type="NavigationAgent2D" parent="."]
 debug_enabled = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="ComponentsContainer" type="Node" parent="."]
 
 [node name="HealthComponent" parent="ComponentsContainer" instance=ExtResource("2_np3a0")]
 
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="health_changed_sig" from="ComponentsContainer/HealthComponent" to="." method="_on_health_component_health_changed_sig"]
 [connection signal="health_depleted_sig" from="ComponentsContainer/HealthComponent" to="." method="_on_health_component_health_depleted_sig"]

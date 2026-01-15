@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd0i2syds3byp"]
+
+[ext_resource type="Script" uid="uid://clooam2esxll6" path="res://enemies/spell.gd" id="1_f15vp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f15vp"]
+size = Vector2(12, 12)
+
+[node name="Spell" type="Area2D" node_paths=PackedStringArray("spell_sprite")]
+z_index = 8
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_f15vp")
+spell_sprite = NodePath("SpellSprite")
+
+[node name="SpellSprite" type="Sprite2D" parent="."]
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f15vp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

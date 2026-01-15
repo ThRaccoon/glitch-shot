@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cql5ysvp1rysf"]
+
+[ext_resource type="PackedScene" uid="uid://bbr7ihiu8km2k" path="res://enemies/base_enemy.tscn" id="1_yfnqb"]
+[ext_resource type="Script" uid="uid://bnhaurgp7cj0h" path="res://enemies/melee_enemy.gd" id="2_vquw6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvyy8"]
+resource_local_to_scene = true
+size = Vector2(12, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq4sb"]
+size = Vector2(14, 22)
+
+[node name="MeleeEnemy" node_paths=PackedStringArray("hitbox_area", "hitbox_collider") instance=ExtResource("1_yfnqb")]
+script = ExtResource("2_vquw6")
+hitbox_area = NodePath("Hitbox")
+hitbox_collider = NodePath("Hitbox/CollisionShape2D")
+
+[node name="Collider" parent="." index="1"]
+shape = SubResource("RectangleShape2D_bvyy8")
+
+[node name="Hitbox" type="Area2D" parent="." index="5"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("RectangleShape2D_bq4sb")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

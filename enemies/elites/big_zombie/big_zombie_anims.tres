@@ -1,9 +1,5 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://c0h5wmc06vvp8"]
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c0h5wmc06vvp8"]
 
-[ext_resource type="Texture2D" uid="uid://dy4k6utqnedi1" path="res://enemies/elites/big_zombie/idle/big_zombie_idle_anim_f0.png" id="1_l8nud"]
-[ext_resource type="Texture2D" uid="uid://cte28bu3pwuho" path="res://enemies/elites/big_zombie/idle/big_zombie_idle_anim_f1.png" id="2_4fab7"]
-[ext_resource type="Texture2D" uid="uid://crnstolilq685" path="res://enemies/elites/big_zombie/idle/big_zombie_idle_anim_f2.png" id="3_mx3rq"]
-[ext_resource type="Texture2D" uid="uid://mog3j0wtxice" path="res://enemies/elites/big_zombie/idle/big_zombie_idle_anim_f3.png" id="4_5r8ux"]
 [ext_resource type="Texture2D" uid="uid://bw8go4qbjoimf" path="res://enemies/elites/big_zombie/run/big_zombie_run_anim_f0.png" id="5_kx8vl"]
 [ext_resource type="Texture2D" uid="uid://bttm3bllsomqq" path="res://enemies/elites/big_zombie/run/big_zombie_run_anim_f1.png" id="6_m5h2n"]
 [ext_resource type="Texture2D" uid="uid://b1tp1dnwj07qy" path="res://enemies/elites/big_zombie/run/big_zombie_run_anim_f2.png" id="7_q1xbc"]
@@ -11,23 +7,6 @@
 
 [resource]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_l8nud")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_4fab7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_mx3rq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_5r8ux")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_kx8vl")

@@ -1,9 +1,22 @@
-[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=3 format=3 uid="uid://botuw5lw3npd0"]
+[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=5 format=3 uid="uid://botuw5lw3npd0"]
 
-[ext_resource type="Script" uid="uid://yocixeig6juq" path="res://enemies/minions/range/range_enemy_data.gd" id="1_6sigp"]
+[ext_resource type="Script" uid="uid://yocixeig6juq" path="res://enemies/range_enemy_data.gd" id="1_6sigp"]
 [ext_resource type="SpriteFrames" uid="uid://h63e1cnlf2mf" path="res://enemies/minions/range/necromancer/necromancer_anims.tres" id="1_iqbje"]
+[ext_resource type="PackedScene" uid="uid://bd0i2syds3byp" path="res://enemies/spell.tscn" id="3_nbynm"]
+[ext_resource type="Texture2D" uid="uid://1pco3aegpsa7" path="res://enemies/minions/range/necromancer/necromancer_spell.png" id="4_kd7xh"]
 
 [resource]
 script = ExtResource("1_6sigp")
+spell_scene = ExtResource("3_nbynm")
+spell_speed = 80.0
+spell_texture = ExtResource("4_kd7xh")
+health = 1.5
+max_health = 1.5
+damage = 2.0
+attack_speed = 5.0
+move_speed = 20.0
+stopping_distance = 100.0
 animations = ExtResource("1_iqbje")
+collider_size = Vector2(13, 14)
+collider_pos = Vector2(-0.5, 4)
 metadata/_custom_type_script = "uid://yocixeig6juq"

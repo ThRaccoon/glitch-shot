@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=3 format=3 uid="uid://bmo27ivl4bqhs"]
+
+[ext_resource type="SpriteFrames" uid="uid://c0h5wmc06vvp8" path="res://enemies/elites/big_zombie/big_zombie_anims.tres" id="1_3ysnd"]
+[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/melee_enemy_data.gd" id="2_3ysnd"]
+
+[resource]
+script = ExtResource("2_3ysnd")
+hitbox_size = Vector2(22, 28)
+hitbox_pos = Vector2(0, 5)
+health = 50.0
+max_health = 50.0
+damage = 2.0
+attack_speed = 4.0
+move_speed = 30.0
+stopping_distance = 0.0
+animations = ExtResource("1_3ysnd")
+collider_size = Vector2(20, 26)
+collider_pos = Vector2(0, 5)
+metadata/_custom_type_script = "uid://cwg2q2tahtcc0"

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=3 format=3 uid="uid://bl4sm21jw4fps"]
+
+[ext_resource type="SpriteFrames" uid="uid://pamwwq51tsat" path="res://enemies/elites/ogre/ogre_anims.tres" id="1_4kqes"]
+[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/melee_enemy_data.gd" id="2_fn8el"]
+
+[resource]
+script = ExtResource("2_fn8el")
+hitbox_size = Vector2(22, 28)
+hitbox_pos = Vector2(0, 5)
+health = 50.0
+max_health = 50.0
+damage = 2.0
+attack_speed = 4.0
+move_speed = 30.0
+stopping_distance = 0.0
+animations = ExtResource("1_4kqes")
+collider_size = Vector2(20, 26)
+collider_pos = Vector2(0, 5)
+metadata/_custom_type_script = "uid://cwg2q2tahtcc0"

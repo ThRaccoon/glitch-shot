@@ -1,9 +1,19 @@
 [gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=3 format=3 uid="uid://blludqdvweuom"]
 
 [ext_resource type="SpriteFrames" uid="uid://cyvgadkjjqp5i" path="res://enemies/minions/melee/swampy/swampy_anims.tres" id="1_06rqr"]
-[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/minions/melee/melee_enemy_data.gd" id="1_brelg"]
+[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/melee_enemy_data.gd" id="1_brelg"]
 
 [resource]
 script = ExtResource("1_brelg")
+hitbox_size = Vector2(18, 15)
+hitbox_pos = Vector2(0, 1.5)
+health = 5.0
+max_health = 5.0
+damage = 2.0
+attack_speed = 5.0
+move_speed = 28.0
+stopping_distance = 17.5
 animations = ExtResource("1_06rqr")
+collider_size = Vector2(16, 13)
+collider_pos = Vector2(0, 1.5)
 metadata/_custom_type_script = "uid://cwg2q2tahtcc0"

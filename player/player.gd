@@ -54,9 +54,20 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_health_component_health_changed_sig(_current_hp: float, _max_hp: float) -> void:
-	pass
+	audio_player.stream = hero_data.hurt_sfx
+	audio_player.play()
 
 func _on_health_component_health_depleted_sig() -> void:
+	audio_player.stream = hero_data.death_sfx
+	audio_player.play()
+	
+	visible = false
+	
+	set_deferred("monitoring", false)
+	set_deferred("monitorable", false)
+	
+	await audio_player.finished
+	
 	queue_free()
 
 func set_hero_data(data: HeroData) -> void:

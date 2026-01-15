@@ -1,9 +1,19 @@
 [gd_resource type="Resource" script_class="MeleeEnemyData" load_steps=3 format=3 uid="uid://bi5x1sb8paks6"]
 
 [ext_resource type="SpriteFrames" uid="uid://lbpa2pm42jmi" path="res://enemies/minions/melee/chort/chort_anims.tres" id="1_r2r3o"]
-[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/minions/melee/melee_enemy_data.gd" id="1_wjtg4"]
+[ext_resource type="Script" uid="uid://cwg2q2tahtcc0" path="res://enemies/melee_enemy_data.gd" id="2_r2r3o"]
 
 [resource]
-script = ExtResource("1_wjtg4")
+script = ExtResource("2_r2r3o")
+hitbox_size = Vector2(13, 22)
+hitbox_pos = Vector2(0.5, 0.5)
+health = 3.0
+max_health = 3.0
+damage = 0.5
+attack_speed = 1.0
+move_speed = 32.0
+stopping_distance = 14.5
 animations = ExtResource("1_r2r3o")
+collider_size = Vector2(11, 20)
+collider_pos = Vector2(0.5, 0.5)
 metadata/_custom_type_script = "uid://cwg2q2tahtcc0"

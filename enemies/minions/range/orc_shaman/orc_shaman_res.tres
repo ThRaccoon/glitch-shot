@@ -1,9 +1,22 @@
-[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=3 format=3 uid="uid://dm885i6t3yhbb"]
+[gd_resource type="Resource" script_class="RangeEnemyData" load_steps=5 format=3 uid="uid://dm885i6t3yhbb"]
 
 [ext_resource type="SpriteFrames" uid="uid://b34u62nir0jqp" path="res://enemies/minions/range/orc_shaman/orc_shaman_anims.tres" id="1_d76qk"]
-[ext_resource type="Script" uid="uid://yocixeig6juq" path="res://enemies/minions/range/range_enemy_data.gd" id="1_g4n5a"]
+[ext_resource type="Script" uid="uid://yocixeig6juq" path="res://enemies/range_enemy_data.gd" id="1_g4n5a"]
+[ext_resource type="PackedScene" uid="uid://bd0i2syds3byp" path="res://enemies/spell.tscn" id="3_rsbkh"]
+[ext_resource type="Texture2D" uid="uid://x2he40pkcx0b" path="res://enemies/minions/range/orc_shaman/orc_shaman_spell.png" id="4_sirsl"]
 
 [resource]
 script = ExtResource("1_g4n5a")
+spell_scene = ExtResource("3_rsbkh")
+spell_speed = 80.0
+spell_texture = ExtResource("4_sirsl")
+health = 1.5
+max_health = 1.5
+damage = 2.0
+attack_speed = 5.0
+move_speed = 20.0
+stopping_distance = 100.0
 animations = ExtResource("1_d76qk")
+collider_size = Vector2(11, 15)
+collider_pos = Vector2(1.5, 3)
 metadata/_custom_type_script = "uid://yocixeig6juq"

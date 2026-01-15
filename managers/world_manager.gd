@@ -27,6 +27,9 @@ func _on_level_loaded() -> void:
 	destructible_spawner.spawn_destructible(DestructibleData.DestructibleType.CHEST, Vector2(50, 50))
 	
 func _on_player_loaded() -> void:
+	enemy_spawner.set_player(player_spawner.player)
+	enemy_spawner.spawn_enemy(EnemySpawner.EnemyType.RANGE, "uid://bc1s7irfi0l25", Vector2(100, 100))
+	
 	var initial_gun_data = loot_spawner.get_rand_gun_data_by_type(GunData.GunType.PISTOL)
 	
 	SignalBus.load_initial_gun_sig.emit(initial_gun_data)
